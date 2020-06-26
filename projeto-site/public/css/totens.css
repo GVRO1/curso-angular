@@ -1,0 +1,45 @@
+.local{
+    text-align: -webkit-center;
+    color: #6f2c91;
+}.comentario{
+    text-align: -webkit-center;
+    color: #4DB033;
+}
+.infoToten{
+    display: flex;
+    border: 2px;
+    border: solid blueviolet;
+    border-radius: 15px;
+    width: 80%;
+    margin-left: 5%;
+    margin-top: 30px;
+}
+.fotoToten img{
+    width: 200px;
+    margin-top: 15%;
+}
+.setaToten img{
+    width: 100px;
+    margin-top: 75%;
+    margin-right: 40px;
+}
+.dadosToten p{
+    color: blueviolet;
+    font-weight: bold;
+}
+.voltar{
+    min-width: min-content;
+    background-color: blueviolet;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 45%;
+    width: 10%;
+    height: 35px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.voltar:hover{
+    color: white;
+    transition: 0.5s;
+}

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/CorpoADM.css">
-    <link rel="stylesheet" href="css/telaAviso.css">
-    <title>Tela de Avisos</title>
+    <link rel="stylesheet" href="css/totens.css">
+    <title>Página dos Totens</title>
 </head>
 
 <body>
@@ -23,28 +23,31 @@
                 </div>
             </div>
 
-            <H1 id="local"></H1>
+            <H1 class="local" id="local"></H1>
 
-            <select onchange="Avisos()" id="boxMaquina">
-                <option value="0">Escolha a máquina</option>
-            </select>
+            <h2 class="comentario">Hitórico do monitoramento da maquina</h2>
 
-            <table>
-                    <caption>Fila de Avisos</caption>
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Tipo</th>
-                            <th>Mensagem</th>
-                            <th>Data</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tbody">
-                    </tbody>
-                </table>
+            <div id="campoInfoTotens">
+                <div class="infoToten">
+                    <div class="fotoToten">
+                        <img src="Imagens/totem_okay.png" alt="ERRO">
+                    </div>
+                    <div class="setaToten">
+                        <img class="seta" src="Imagens/seta-roxa.png" alt="ERRO">
+                    </div>
+                    <div class="dadosToten">
+                        <p>Id-Totem: <span id="idMaquina">2303083</span> </p>
+                        <p>Status-Totem: <span id="Status">Online</span></p>
+                        <p>Transações-Totem: <span id="Transacoes">R$30000,00</span></p>
+                        <p>Clientes-Atendidos-Totem: <span id="Clientes">2400</span> </p>
+                        <p>Capacidade-Memoria: <span id="capacidadeMemoria">250GB</span> </p>
+                        <p>Ocorrências: <span id="Ocorrencia">8</span></p>
+                    </div>
+                </div>
+            </div>
 
-                <button class="voltar" onclick="window.location.href='UserADM.html'">VOLTAR</button>
+
+            <button class="voltar" onclick="window.location.href='UserADM.html'">VOLTAR</button>
 
             <div class="fotos">
                 <img src="./Imagens/CPTM.png" alt="ERRO LOGO" style="width: 22%;">
@@ -72,4 +75,4 @@
 
 </html>
 <script src="JavaScript/login.js"></script>
-<script src="JavaScript/telaAviso.js"></script>
+<script src="JavaScript/totens.js"></script>

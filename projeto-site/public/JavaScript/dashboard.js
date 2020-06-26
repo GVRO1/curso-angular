@@ -12,29 +12,6 @@ function atualizarGraficos() {
   setTimeout(atualizarGraficos, 1000);
 }
 
-function confirmarIdMaquina(){
-    id_maquina = inp_id_maquina.value;
-    var idmaquina = inp_id_maquina.value;
-    fetch(`/registros/getMaquina/`, { cache: 'no-store' }).then(function (response) {
-      if (response.ok) {
-          response.json().then(function (resposta) {
-
-              console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-              for (i = 0; i < resposta.length; i++) {
-                  var registro = resposta[i];
-
-              }
-
-              resposta.reverse();
-          });
-      } else {
-          alert('erro ao pegar as linhas ');
-      }
-  })
-    
-}
-
 // altere aqui as configurações do gráfico
 // (tamanhos, cores, textos, etc)
 function configurarGraficoProcessador() {

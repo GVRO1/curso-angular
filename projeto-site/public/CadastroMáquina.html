@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/Corpo.css">
+    <link rel="stylesheet" href="./css/CorpoADM.css">
     <link rel="stylesheet" href="./css/cadastroMaquina.css">
-    <title>Página Inicial</title>
+    <title>Cadastrar Máquina</title>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
                     <a href="SobreNos.html">Sobre Nós</a>
                     <a href="nossoProduto.html">Nosso Produto</a>
                     <a href="nossoParceiro.html">Seja um Parceiro</a>
-                    <button onclick="window.location.href='Login.html';">LOGAR</button>
+                    <button onclick="voltar()">VOLTAR</button>
                 </div>
             </div>
             <h1 class="titulo1">Cadastre uma nova máquina</h1>
@@ -27,17 +27,20 @@
             <form id="form_maquina">
                 <div class="cadastrar">
                     <div class="esquerda">
-                        <label>Senha da nova Máquina:</label><br>
+                        <label>Senha da nova Máquina:</label>
                         <input id="senha" name="senha" type="password"><br>
-                        <input class="mostrarSenha" type="checkbox" onclick="mostrarSenha()">Mostrar senha</input>
+                        <label class="lblMostrar">Mostrar Senha:</label>
+                        <input class="mostrarSenha" type="checkbox" onclick="mostrarSenha()"></input>
                     </div>
-                    
+
                     <div class="direita">
                         <label>Estação da Máquina:</label><br>
-                        <a href="" id="estacaoMaquina"></a>
+                        <a id="estacaoMaquina"></a>
                     </div>
                 </div>
-            <button onclick="enviarMaquina()" type="button" class="continuar">Cadastrar</button>
+                <div class="botoes" style="text-align: -webkit-center;">
+                    <button type="button" onclick="enviarMaquina()">cadastrar</button>
+                </div>
             </form>
 
             <div class="fotos">
@@ -62,20 +65,6 @@
         </div>
     </div>
 </body>
-
 </html>
+<script src="JavaScript/login.js"></script>
 <script src="JavaScript/cadastroMaquina.js"></script>
-<script>
-function mostrarSenha()
-{
-  var x = document.getElementById("senha");
-  if (x.type === "password") 
-  {
-    x.type = "text";
-  } 
-  else 
-  {
-    x.type = "password";
-  }
-}
-</script>

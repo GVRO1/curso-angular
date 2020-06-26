@@ -45,5 +45,9 @@ function redirecionar_login() {
   window.location.href = "Home.html";
 }
 function finalizar_sessao() {
-  fetch(`/usuarios/sair/${login_usuario}`, { cache: "no-store" });
+  fetch(`/usuarios/sair/${sessionStorage.email_alprime}`, { cache: "no-store" });
+}
+
+function voltar(){
+  window.location.href = "UserADM.html";
 }

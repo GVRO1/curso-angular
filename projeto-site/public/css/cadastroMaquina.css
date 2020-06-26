@@ -36,35 +36,39 @@
 .esquerda{
     width: 50%;
     margin-left: 8%;
+    text-align: -webkit-center;
 }
 .direita{
     width: 50%;
+    text-align: -webkit-center;
 }
 h6{
     color: red;
     margin-top: 0px;
     margin-left: 10px;
 }
-.continuar
+.botoes button
 {
     background-color: blueviolet;
     border-radius: 10px;
-    margin-left: 45%;
     font-weight: bold;
     font-size: large;
     height: 45px;
+    margin-top: 20px;
     margin-bottom: 20px;
-    text-align: -webkit-center !important;
+    margin-left: 10%;
+    margin-right: 10%;
     transition: 0.5s;
 }
-.continuar:hover{
+.botoes button:hover{
     color: white;
     transition: 0.5s;
 }
 
 .mostrarSenha
 {
-    position: left;
+    inline-size: 20px !important;
     font-weight: bold;
     font-size: small;
+    margin-top: 5px !important;
 }
