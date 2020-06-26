@@ -1,0 +1,54 @@
+.logar{
+    text-align: -webkit-center;
+}
+.logar h1{
+    color: #4DB033;
+    margin-bottom: 60px;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.logEsquerdo{
+    text-align: left !important;
+    width: 60%;
+    height: 200px;
+    margin-left: 10%;
+}
+.logEsquerdo input{
+    height: 20px;
+    margin-bottom: 50px;
+    width: 90%;
+    border-radius: 7px;
+    border-color: #4DB033;
+    text-shadow: blue;
+}
+.logEsquerdo label{
+    font-size: x-large;
+    color: #6f2c91;
+    font-weight: bold;
+}
+.logDireito{
+    width: 40%;
+    height: 200px;
+    margin-right: 5%;
+}
+.logDireito button{
+    cursor: pointer;
+    height: 30%;
+    width: 50%;
+    background-color: #6f2c91;
+    border: #6f2c91;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    border-radius: 15px;
+    min-width: min-content;
+    transition: 0.5s;
+}
+.logDireito button:hover{
+    color: #14001f;
+    transition: 0.5s;
+}
+.logDireito a{
+    text-decoration: none;
+    font-weight: bold;
+}

@@ -1,0 +1,432 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="654,11269" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:uasb="clr-namespace:UiPath.Activities.System.Binding;assembly=UiPath.System.Activities" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="48">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Activities.System.Binding</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Word</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Mail</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="38">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <ueab:SequenceX sap:VirtualizedContainerService.HintSize="562,11204" sap2010:WorkflowViewState.IdRef="SequenceX_1">
+    <ueab:SequenceX.Variables>
+      <Variable x:TypeArguments="ue:IWorkbookQuickHandle" Default="[new WorkbookQuickHandle(workbookPath:=&quot;Project_Notebook.xlsx&quot;,visible:=True,autoSave:=False,createNew:=True,readOnly:=False,isWorkspace:=True)]" Name="Notes" />
+      <Variable x:TypeArguments="uasb:BindingsRepository" Default="[new UiPath.Activities.System.Binding.BindingsRepository()]" Name="Saved" />
+    </ueab:SequenceX.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard CloseMode="{x:Null}" OpenMode="{x:Null}" DisplayName="Use Application: Apache NetBeans IDE 11.2" sap:VirtualizedContainerService.HintSize="520,1313" sap2010:WorkflowViewState.IdRef="NApplicationCard_1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="400,1048" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ClickType="Double" DisplayName="Click 'projeto-alprime-1.1'" sap:VirtualizedContainerService.HintSize="358,165" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="52, 260, 121, 18" ElementType="Text" FriendlyName="'projeto-alprime-1.1'" FullSelectorArgument="&lt;wnd app='netbeans64.exe' cls='SunAwtFrame' title='projeto-alprime-1.1 - Apache NetBeans IDE 11.2' /&gt;&lt;java idx='1' role='page tab list' /&gt;&lt;java idx='2' name='Projects' role='panel' /&gt;&lt;java role='tree' /&gt;&lt;java name='projeto-alprime-1.1' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='netbeans64.exe' cls='SunAwtFrame' title='projeto-alprime-1.1 - Apache NetBeans IDE 11.2' /&gt;&lt;java role='page tab list' /&gt;&lt;java name='Projects' role='panel' /&gt;&lt;java role='tree' /&gt;&lt;java name='projeto-alprime-1.1' role='label' check:text='projeto-alprime-1.1' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAH0AAAAWCAYAAADts5O8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUwSURBVGhD7Vr7TxRXGN1/qEnbjVBDW8USikKNpdTCxgeNFSFtSmillPBYXiUlYFkERZQWXWpTWitobI1UqbA/NE2gQrXaaMTsIxCwFqppCBg4ne/O3N07j52dVXZFsyc5uTN3zv3mzJy5d3eSsUGDv4aHkW+zqXjm6FGMjo4yjo+Pw+fzYWFhQRmRwNMGXegJPPuIW+iBQCDBJ0wOXehth7qQlpnN2NreGWzbOruwvLyMsfEJRRkdjEwkGF9yqEKfvOPFzvfeh2/2AWNZdSNrjxz/FkXF+zE9PY3xq1cVdXQwMpFgfMmhCr27pxeuzuP4eSyAV9Mycd07x9rfb91l7UD/aczNzyvq6GBkIsH4kkMVevHHn6Lv3GUM/zGFz5rbWdt4oIO16zeks9BnZ2cVdXQwMrHW6fc4Ybc74fH7DY8/beRQhb4uZSMmbv+N/KIS3ArMo6y2GTel9sTpi0hNy0DLji2o2LEN7Xmv4ZcvXcooazAyES2thLCaQUVbK5YPid/vhsNCbTMdhyr055NSpKV8Fhlbc1ibnpXN2qaDx/D65ky49uag6ZMPsXT2GNpyN+Hr0j3BB2BlZUWpYgytgVjxSYYeK3qcdthsNtgieImk41CFXt/YhOdeTMbbqSmszc1IY21WShKK09ehfLPMw4XbWfCud1LxcOgUhtrqMNTdqlQxhnwDHdJTKJkiYxIdbn/wxjod1OeAWzLL+hRNsM/tkPeVC1Jr7HB6pD6/B06hvt3pMaylvRnE4A1jVOop3kZGqi15P8F0er3DHfJF4+h8Rv61nkTyc0V6AM10HKrQOZpzNmB56g5unOzAgPMDtO7OQmXWS6ylfeqn0ElHXPjexVozyBcZujg5ROVGiTeDlidhn4XhcMvHlAsa8ZEmFKB4oaptk1pmZN4kXfB8zKMF7wZ6WStsR/DPPWhpRUM003EYht5bXghv7xcseOLD3y4wLg2eZLzfWoTzVYVofPNlxn879rPWDFozciB2VH9Ds0Lo1+poX7lB/Jh8U/ks4VRraLxZLXFm61cEifw8QmvVu6g38mPmX+uL6oq1+bnC0UzHoQv9wb276KstQcO2FLZ0cy72t7MZPd28D2M176J263ppuwBXqnaib98b+LGzmY2fuT+D9LabsBWMMtI29WnNPHboYS5MHG9WSzdGmY1ijZiGLoyzQrGO0XFOMx2HLvTBrgP4tceFn1oqUScFv3TpOyz+cJDN5smGPZioyWeBdxS8hSppya/MTMbZQ03KaCCvexLnJuZwavQejlyegfOMn4WvNRNc6gxvqJXlPaQRyTT8ITGppRsjeGA6wZvOYzjv3J/QL9a24j8ctR7ZfrgHWNCJ5NCF/nn2K/JSfqkPAxUFUrDJ+LNmF67V7JZm9S62T/3/tBSyWU56ERQwb0XKJvXLmZFJtTZ0YaJWV0+o4WZ/rKL7I8fHsHEOhxyOGHqwRqiO1jvfjxR6JP9aiks+kR4Webz6eox0Yh0OVej02uWuL8Nw9d5g8P0leajYkhQk7fPASUd68XWNAqbZfS3wH1ouTCH/q9uh0E0uzAr5DHucGo/C1fC+Fsihm+k3Jq6gp65Ueh3byH67KXha3hcOfxQKuzSXHScd6UXEInS+TFt5tYkFn/nQFxcX4fV6MTx4Hj0N5ajfvkn63U4Kkvapn46TjvQiwoVuZCLB+JJDFzoHfRlDX8jQlzL8qxkrX8680HBdFzr9gzcykWB8yRE29EdFuFc2IxMJxpccqx56AmsfutBj9eVMAmsFwP9CIhlab3BW5AAAAABJRU5ErkJggg==" InformativeScreenshot="a885ad0d29b4ad31254832655980d96b.png" SearchSteps="Selector, FuzzySelector, Image" Text="projeto-alprime-1.1" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NClick ClickType="Double" DisplayName="Click 'Source Packages'" sap:VirtualizedContainerService.HintSize="358,165" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="71, 278, 109, 18" ElementType="Text" FriendlyName="'Source Packages'" FullSelectorArgument="&lt;wnd app='netbeans64.exe' cls='SunAwtFrame' title='projeto-alprime-1.1 - Apache NetBeans IDE 11.2' /&gt;&lt;java idx='1' role='page tab list' /&gt;&lt;java idx='2' name='Projects' role='panel' /&gt;&lt;java role='tree' /&gt;&lt;java name='projeto-alprime-1.1' role='label' /&gt;&lt;java name='Source Packages' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='netbeans64.exe' cls='SunAwtFrame' title='projeto-alprime-1.1 - Apache NetBeans IDE 11.2' /&gt;&lt;java role='page tab list' /&gt;&lt;java name='Projects' role='panel' /&gt;&lt;java role='tree' /&gt;&lt;java name='projeto-alprime-1.1' role='label' /&gt;&lt;java name='Source Packages' role='label' check:text='Source Packages' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHEAAAAWCAYAAAD3j3MyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASfSURBVGhD7Zrdb1RFGMb3rzAxJl54JZfeEIn3/gFGSbgwMcYajFpjsF3S2tpCEWy63apRMcEPQtj0ojZBWpUmRSSBBrpBaXHRpUuxXZClW5a2tDYLzcPMe+bdnTNnZruldIVwnuTJ2TOf78xv5pzZbSMQeq4jhY+OTONCdhFdx67htW8zePHTtMwK9QiIIObmcwQt8maSLD/LtFCPhghiLRTZeTH0AzYrAPFSshejA+1VeTo1pGqtLlsQoddnVgCihJM82kDXhVQMmOwGZr4qu3AImP+JLMtUK1sQoddnVgDiyI+tmPr1HRR+b8WFoWYCNTO6F5jo9IBOfS5eogJmCPF/NysA8WRfE0FEYT8w+w3m/+rBn0NNGsxPgH/itCsfe4g9N5DO3cCWaMqev8FmBSAe7416EPNfCH8mdl0cK9djyI2242DnS/jvfIvYkeIxez8Q5aDVvVR6OBMIrGY2YgHmULdWGA8rxOHeRgXxSxSvxnD3WheK2U4spfcSxHyyASvpPcDl+NogRrMYxDLiPWrA8n48GwisZjYBJObEgl0jkIcd4kquh+AVr3RiObOvBPH6qR24c3E3kIkRxNzkGVWzsjyIjtXu2xWqjDlB6v75uHeNj2tlqe2yBhOqvrqHvnj0PvX2tfi2DC+relLGwlOpUgMDWhtyEaiyzvq+mIS4riNWXzt6rMosJ8TlK10evEsfY/HvPTh+8GV0v/8svu94AT8f2EpXeS99LNGgarslO62jiRfSd6CaGJp4cU+By3xzktU9QdTKR6IZxHPafalNbcGYbVnSqF/LRBEcGY+tH25DXl0LtFTfP87SeBqnrbF64yyn140H22dF2tra1EdPDHFJnEYlvIVUB+bHduG79s1IJw/jVvYERvrfwpy43r09KdIS+Lp5s6rtlt65t2qFXLBE8G+oHWeFaEn3TT61YcqYBLNMIAZNtn595VZv2xU3L0q/xPgJrvfZhMdmOXfiQmo3wbs11k5fN7rf20TwbO6q36Rqi3gdP+EFglC7xQrLlV5hMgKTa6aZdpWh/o1HoK1fLa+Onx6V6h823rmV2tVdeoRX2InqWhJDnD71AQp/tOLmuRacO7Idu7Y/g/zpt8kjveKAI66LNyfIMo+17cBlDJwvoC85i/0ncvTDOgGVQfNApXkQasVZH6da4Py4Cwza+Tg10kyr/q0QtfRSv40T7sepKCtfFXTadtaX47TANcavtz3Ip3cao1ZXmVUR4myyGfmzzXSgaXn9aeRH3iUTRPVZWuaxJDC++qwmuyxjQCpVX3E0AUpp8U6gQbt2hConRRNipPl2Adcx05RL724h7pfKGW36DjZq4UiQzvr8GmE52i1DL8v2dYwVgPhb34c42+9BlJ4500QQo68+RfBslnksCcz8sxZBNAJ47M0HHltelWYFIN4u5HD66D4MHar3Qdyx7UkUxmJkCY4/S8s8VgjRbX2HVjqwVGtWAKJUsbgkTp39BFLuSgmx/pUnKpoVQqydWVaIrH+nUjj5Qxt+SbSolNXl+i8BWxCh12dWRYj3o6q/YoRet1kPHGKo2isAcaP+sh9qowTcAwDuDKgpQ2StAAAAAElFTkSuQmCC" InformativeScreenshot="54f1172ea61706453deb35afc2d62b8c.png" SearchSteps="Selector, FuzzySelector, Image" Text="Source Packages" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ClickType="Double" DisplayName="Click 'com.alprime.GUI'" sap:VirtualizedContainerService.HintSize="358,165" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="90, 296, 107, 18" ElementType="Text" FriendlyName="'com.alprime.GUI'" FullSelectorArgument="&lt;wnd app='netbeans64.exe' cls='SunAwtFrame' title='projeto-alprime-1.1 - Apache NetBeans IDE 11.2' /&gt;&lt;java idx='1' role='page tab list' /&gt;&lt;java idx='2' name='Projects' role='panel' /&gt;&lt;java role='tree' /&gt;&lt;java name='projeto-alprime-1.1' role='label' /&gt;&lt;java name='Source Packages' role='label' /&gt;&lt;java name='com.alprime.GUI' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='netbeans64.exe' cls='SunAwtFrame' title='projeto-alprime-1.1 - Apache NetBeans IDE 11.2' /&gt;&lt;java role='page tab list' /&gt;&lt;java name='Projects' role='panel' /&gt;&lt;java role='tree' /&gt;&lt;java name='projeto-alprime-1.1' role='label' /&gt;&lt;java name='Source Packages' role='label' /&gt;&lt;java name='com.alprime.GUI' role='label' check:text='com.alprime.GUI' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG8AAAAWCAYAAADO6MJpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANbSURBVGhD7ZlLaxRBFIXnf4giuBBxIYKbXiv6CxRFEHHR+ERBooKIEAQXmhHRhaiILg0+COhAXIgrgzIohmDIaIIQCQSdBJW4ilz73Krqrq661XGSyTgJfeCku2/dW6+vuzOTVCjR1ksf6eLAJI18naOrg1N08N447bzeoMq50dJtdjvF8KZ/TitYcZ2Nc8SkwUsvze0Uwyu1MlXCW8Hy4H2bGqX+G7vp9oVtOT/s20FDT47w0W1DPupKdVYevOGhxzT44ChNTbzN+cvIAMPD0W1DPupKdVYevIH7PTT+vp/mf32iP5Z/TL5keDjaceQhH3Vdp0aVoqhKDX252uTBu9O7nSG1atR1nVqFt0ywG9WIKpVK6qiajCCNpWNjOKb5MdV0sysP3rWeLfT99THRT2/uEuMw6rpOywSjFTG43BwaVI01oAA8jv3D3D14V05uFuHANrz5383UuEbdwqpRbN2BMW4p6S7jiccURyYvWXB6jgRf+bs7ItzcZgPURmX9pf3o9mqMWEzPA/ni+MjRfaXjecJ6A216rFyTHZPaHXnwLh/flAJybcObm/mcGteoK5bagPzmK5gmxgBwwRujF12Ls83B+QILYiHP9GNg2JvIfWpYLhA3Xxh/jOdtvc50nTevUByS2uxYUa2WB6/38MYUkOui1ybqCrXQZCFcW0+AtwipDyOuNU9C4iTPvJrMMatTT0TfCycu5QvnCq41Flv43WTXJj/N02vPLZtTImGsXLsjDx4ALdZQ6E9t4mTcGK4XA4/rrCdL5y0rPLsuKOG1WdSHMFbRGB6884c2UPPNGdEAJMVh1EH77k7Qsw+z9KjepFuvpvkP3oCYzKa116a0CPfc3O3OQs2HhCA88/pz41K+cK5em+5atJBjPYXeB5ZcH3mw6frVRTZuQB68swfW08y7XtGAJ8Vh1EEKlDraZvHCslcNzzMXE2AUnVubVOMPHcpRHKsN0vl8TMcIjAPZ+fY4oXO7z1w8mxfEUKxc/qqgGgr6MPF8X7Y8eKf3r6PZ4T7RgCfFYdRBAOX+eymF979kb/oqkgfv1N61Ihy4CB7qoBJe5+TBO7FnTdCAJ8WNoa6Et0rlwavX64s2FPqvfKn2y4O3VAW/KpRqu9oOr1TnVMJbsSL6C4F2gAkbrJF4AAAAAElFTkSuQmCC" InformativeScreenshot="c5c5c59e1fc052142b2f5f9b567bb56e.png" SearchSteps="Selector, FuzzySelector, Image" Text="com.alprime.GUI" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NClick ClickType="Double" DisplayName="Click 'TelaInicial2.java'" sap:VirtualizedContainerService.HintSize="358,165" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="109, 460, 106, 18" ElementType="Text" FriendlyName="'TelaInicial2.java'" FullSelectorArgument="&lt;wnd app='netbeans64.exe' cls='SunAwtFrame' title='Apache NetBeans IDE 11.2' /&gt;&lt;java idx='1' role='page tab list' /&gt;&lt;java idx='2' name='Projects' role='panel' /&gt;&lt;java role='tree' /&gt;&lt;java name='projeto-alprime-1.1' role='label' /&gt;&lt;java name='Source Packages' role='label' /&gt;&lt;java name='com.alprime.GUI' role='label' /&gt;&lt;java name='TelaInicial2.java' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='netbeans64.exe' cls='SunAwtFrame' title='Apache NetBeans IDE 11.2' /&gt;&lt;java role='page tab list' /&gt;&lt;java name='Projects' role='panel' /&gt;&lt;java role='tree' /&gt;&lt;java name='projeto-alprime-1.1' role='label' /&gt;&lt;java name='Source Packages' role='label' /&gt;&lt;java name='com.alprime.GUI' role='label' /&gt;&lt;java name='TelaInicial2.java' role='label' check:text='TelaInicial2.java' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG4AAAAWCAYAAAAhKqlXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPVSURBVGhD7Zn7SxRRFMf314gggoj6G4J+3qIfehCE/VAgVkgP0abYMtTyzaKmmWKtGGaykVRGlBBllL9E9VuUGgqJj5W0TS0xzTcbZp323L0z3rn3zt6JbFWaDxzmPs459875ztxZWBdwtLa2/rE5xB5BOIeVgSPcCkUQLq+sxtJyS6uNa1dvP41wWAoE4XLCogyNzUrtw9Ao3Gp4CvM/f0Hd/SfQGXDEWyoE4bJKrsL74LjU3nQOQO3dR/BlbJpYzZ2HYfH6aKRDLBGEO19UCR2fxqX2Nixc1c0G6OgfMexcwRUaucgEfOB2+yBAu0vCctiDBYJw6QWXoXNgQmotXYNQWn2b+OiWmn+JRkYjAD63C1wu0dw+i7KoiobzRh4NmuiwQLQ8dtbQ503r/cW+FwlBuLP55dA9OAlaxT2lvWruBE92CY20id0bs+P3r4vE5m/SQDOejibQXG6w0i4WCMKdzrkIgc9TkFJWDw3vJqRW+tgDh2s3kasnuxjm5+dptA1kxcYx42mmBWH8Aj638aQb8wibi7Z9mu7nihTatB4WfGH+xA3FGqZYFjxBJMKFxSXxqpymEwL3FOlb3qcEQbhTmUXwYXgajhffhLnQV6kdvLYR+ubayDX5yl4aaROhGAsbJ9D5HquiYXH0R5/1IQWhYiHox+TpIcVm5hHVGlbzVuOIKidpcvs0bYpiNU5xFRYW0maElHQvfByZgURvDbS3NYPf74eW5tfE9HZ81QboDr0hhm3/y2wabQP+xrBvPGW6afCM9eN92HFZG6F9Qzh+HuHjuTXkD4/imFTkJOMmEZlcVv4ShDcuKTUXBkZnISG7Uvq2oe2vWA/t0y8Mw37t80yaQQFfDGlxwtBxUjzF8Si0ETaeuZrWYecka4gxNr5tipyRLr79eMqE8+ljUf1FBOGOerJgeDwEBzLKLd+4uJJ18Ppbo8lwzBbChrAY3BGGUD++eOQ7wN6srI1w8dGOSqs1TOPYlolGxtVHvWnftK9p2sKvU4U/jyBcopYBo1PfYd/pC9K3DW2Pdy08H6k3DPveuiM0gwJugwRy8+Yjgr1x/Cboc268WX3eiOGOVoT2xeIv5GJ/nFiuQedJIZlY4odFJzlF4axykn0gfFyYqP4cgnCHUtJgcnYO9p70WtqOrDXQOHSdGLbz/IkQDAZphv8c/H5FKfhiIQiXkJQKM6Ef0NsXtLTtaavhQfAyue7WtjiiESJHvupn/GIhCBd/zKO0ncmbYeuZVeS6bVccjXSIJYJwsn+4VeYQewThHFYGjnArFEE4/l9v1px/wJcLAL8BY81zatCqBrYAAAAASUVORK5CYII=" InformativeScreenshot="6b56b9a8715dcde7f4f8395cf4bb84ae.png" SearchSteps="FuzzySelector, Image" Text="TelaInicial2.java" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="90, 388, 107, 18" ElementType="Text" FriendlyName="'com.alprime.GUI'" FullSelectorArgument="&lt;wnd app='netbeans64.exe' cls='SunAwtFrame' title='Apache NetBeans IDE 11.2' /&gt;&lt;java idx='1' role='page tab list' /&gt;&lt;java idx='2' name='Projects' role='panel' /&gt;&lt;java role='tree' /&gt;&lt;java name='projeto-alprime-1.1' role='label' /&gt;&lt;java name='Source Packages' role='label' /&gt;&lt;java name='com.alprime.GUI' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='netbeans64.exe' cls='SunAwtFrame' title='Apache NetBeans IDE 11.2' /&gt;&lt;java role='page tab list' /&gt;&lt;java name='Projects' role='panel' /&gt;&lt;java role='tree' /&gt;&lt;java name='projeto-alprime-1.1' role='label' /&gt;&lt;java name='Source Packages' role='label' /&gt;&lt;java name='com.alprime.GUI' role='label' check:text='com.alprime.GUI' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG8AAAAWCAYAAADO6MJpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANnSURBVGhD7ZlNaxRBEIb3f4gieBDxIIKXOSv6CxRFEPEw+ImCRA8ihqDkoFmRKIiKKJ4MfhDQhXgQTwZlUQxBycZEIRIImgSVeIqU89Z09/R018xmo1knYV6odE91VX89M72T3QpF2nz+PZ3rn6DhL3N0aWCS9t8eo+1XGmgqVWAxvKkfUwyrEtbZUIevVLHF8EotT5XwlrE8eF8nP1Bf7066cXZLyu73bKPBR4e4dNsQj7xS7ZUHb2jwIQ3cPUyT469T9nm4n+GhdNsQj7xS7ZUHr/9OB4297aP5n6P027LvE88ZHkrbjzjEI69walQpCKq0Ut+bPXg3u7YypFYNeYVTq/CWCHajGlClUjEWVKMRpLGUbwSliQ+ppppdefAud2yiby+PiPb46g7RD0Ne4bREMFoRg0vNoUHVUAHKgMe+Bczdg3fx+EYRDsyGN/9r2hiukddcNQqtOzDELSXdZTzxkMJAx0ULNnUE+Erf3QHh5tYbEG9U0p/pR7VXQ/hCepoRL46PGNWXGc8T1pvRpsZKNdk+qd2RB6/76AYDyDUb3tzMR2O4Rl6+4g1Ib34MU/sYAC54Y9Sia2GyOag3WRALcbofDcPeRO5TwXKBuPHC+CM8b+s4U3nevLL8kNRm+/JylTx4XQfXG0Cu5R2byMtVs8lCuLaeAG8RUh9anKufhMiiOH006TLJi5+InmeOX4oX6jFcayw24bPJzo3+6qfXnlsyp0jCWKl2Rx48AFqsQZlftTWbLITrxcDjPOvJUnFLCs/Oy5RwbOb1IYyVN4YH78yBdTT96pRoACT5YciD9twapyfvZulBfZquv5jiL7wBMZpNa8emtAi3ru92Z6H6JSETnj7+XL8UL9TjY9NdixJirKfQe2FJ9ZEGa9YfXyTjZsiDd3rfWpp50yUa4El+GPKgGFRc2sbihSVHDc8z5RNg5NWtTarxS0dsQRjGG6TiuTRjZIwD2fH2OFl1u8+UP5kXxFCsWP5XIW7I6UP7033Z8uCd3LuGZod6RAM8yQ9DHgRQ7s9LBt7/kr3pK0gevBO7V4twYHnwkAeV8NonD96xXasyDfAkvzaokPBWqDx49Xp90QaVv8q3Tx68v1X5q3z7tGB4nZ2dqlaqKPrnT56t7mv3Mu1C711Tjn6aUBmlFi6iP7+uj08Iq2b4AAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" Text="com.alprime.GUI" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="358,136" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][d(shift)][k(f6)][u(shift)][u(hk)]" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp FilePath="C:\Program Files\NetBeans-11.2\netbeans\bin\netbeans64.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUMSURBVFhH3ZdrTFtlGMfJJl7mF2OCySBchoDJBkyklPumQWMwaIwZ8UbBfZlh0U0MiRF1zu2DRsalyhJZIpYONm2huOAWM50yKQUc49oCrRswWk57ToGxjnLteR7f055CaQujddsH/8k/TXra8/v1fd625wT4E5ksd6tElZR1ul3YIu9PaZFrUrO45/jD9zY/dCRH17YJyiRtSSZpexI29KdiozrVpFCnlSmGhDH8y+5+av5KCJIoBUW1bUlaUuTqIsA3TatQpxTJujOD+Lf991R3JW4jn3hfrTJJSaCsE+5dwF6WVKnQpOY2k/fyp/E9RzFgi6RdkE5AMlKrK9hZh0CKu4CzVlJ5ozolnTsXf9rNpbZVGCNVCcsJhHGHOitpE9gFyCYksHUlsFGTyjSoU8s3tT+8zdmzApQoE1F+5SX4e7Qceicq4fzwy9CgTibADUTutD+kFwWi2g5hK4GsmbNrOfCZjr14WVsC+uk2sMzpkSs10wYd45/BucEsXsSbgL1s02By69nuvSIeu5q67PRF6alkJJsNa8nSuoOlqhT8deAAXKN/gRnrGFrmDXhrbtxey5wBZ+bGcHTqPLSMFIJCk4HuIgqNY3VO/P4mvlJRtchjV1P/wB6sfyITTuelgVQuBE5CohIQAQH+3J0LA3oJTM1q14Ddy4lMz+pwiJbCRd0b4BhJMjYReLUqB0SnvoSnPvwNthd2II9dTf1DROBB0sA9WPdkJkiLU+CnP16EzpFSMN3qAQdY7wH1LDcWAzKWXuilykDW9xocPlsMCSXnILiwHbmGHFStI+AsJ/FwBvZ9971t3jbNw73BNqoe6Zt6KG3utIUcVK6AneWxq1kjQFoXmIHaqkYWSZZsVphdMIF3kGfpGT3oDBPQP2LEL2RadnvhKtgngeGTDXYBLgA2WFy2wO15al2RSYseRowG6LtOQfc/FPZdJwLyYTb4bgg4w8IyzC/d5MayIjI9Ow7jjAEGRifsYGfviYAzNnYBrAtmoKYNMHhjLfi+CHBZXF5G9RiNV3We8PskYEP1KO0VzvX/IOD4Gq6XzQgc80egjnsMzETd1/V+C/RccwiU/Khjg93gGwpw8KZHs6Ar6FUwCd6D2QoFsNQU8Mw18SbQQ9pL4JcGKDhywQgZJymI/lwHYR9cgQ0FOLDskedA+XgO3Ah9C8wR+ciEi+ydzv4U5mWXAW7P8WhH3AU4sGqIQvGfRsipMUFcpQm5xpPuKtVD1CcaCH2/E0LISHjsai49lr2oC34dGQK2w10bmodM1H6cKTgBi61qQAJ2FeCWu4t8FU+3GyGv3ggJYhPGVjjA7t351RhGftTv+XdMhYlE5vD8VgJk18BdS0TMce+i5eMasA3rYcnGoob8DjR3U3BIYYTkKhOsB+bLxovp1tgKyvOChIsxan+QOaKgiMC0HnBnubEQkan0ImC+bYbSCxPwbLUD7FxurxUbteR4UcI3xjtfspsj82PoCFE5ATIeAnzNREIdewifPz6Muypp71BHmd2VpvLdZWbfblow4OgWOqwgnYkokBGg1UOArMRA3GF84dgQxom9CljJcsufrqDTyTW+b5flrqGCD2xjduTvI1US8Mr+sAvEexVgSZVxlcbcxGrK/xsT97jvD68CvszZ3zCR70TTO/LLJsNFJvsIjg9hrJg2xYmNZT7P2d9gQO7WybC3s64+U9ySc6S/Zad4MitXhn7cngcE/AsRswX4gP6fSwAAAABJRU5ErkJggg==" InformativeScreenshot="817ef4e97c98c4ca325558943adb0321.png" Selector="&lt;wnd app='netbeans64.exe' cls='SunAwtFrame' title='Apache NetBeans IDE 11.2'/&gt;" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="520,81" sap2010:WorkflowViewState.IdRef="Delay_1" />
+    <uix:NApplicationCard CloseMode="{x:Null}" OpenMode="{x:Null}" DisplayName="Use Application: " sap:VirtualizedContainerService.HintSize="520,1052" sap2010:WorkflowViewState.IdRef="NApplicationCard_2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="400,787" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto DelayBetweenKeys="{x:Null}" ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Código da Maquina'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="358,225" sap2010:WorkflowViewState.IdRef="NTypeInto_1" Text="1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="188, 181, 160, 36" ElementType="InputBox" FriendlyName="'text'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java idx='1' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java role='text' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKQAAAAoCAYAAABwx1HiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADESURBVHhe7dKxbcJQAEXR7C8RSsgCsILTQU3WIGv8yFIqm4LGcItzpCe9Ae7HgBBBkiJIUgRJyirI3efe7GVbWgV5OH6N2+3HbPPNrS2tgjydzuN+/zXbfHNrS6sgp+n7/8G2HrUmSN5GkKQIkhRBkiJIUgRJiiBJESQpgiRFkKQIkhRBkiJIUgRJiiBJESQpgiRFkKQIkhRBkiJIUgRJiiBJESQpgiRFkKQIkpSng7xcrmab76kg4Z0ESYogSREkIWP8AXp9H5tKju84AAAAAElFTkSuQmCC" InformativeScreenshot="b9a3dcb4d4f7b3e10844ea7f643bc1da.png" SearchSteps="Selector, FuzzySelector, Image">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="208, 151, 118, 24" ElementType="Text" FriendlyName="'Código da Maquina'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='Código da Maquina' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='Código da Maquina' role='label' check:text='Código da Maquina' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHoAAAAcCAYAAACu9KujAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMFSURBVGhD7Vg7biMxDN3zBHscnyNb+wZTJr2bge9gwJVrl1MHcD2Nz6AlNaJEcTSixrEdxNIDDESmxEfyUR/nj2moAk3oStCErgRN6ErQhK4ETehK0ISuBDcKfTXD9mCOFzcsxHj5MsPKNbXi3rVaLzQE0G8+zL+/n+Z9++W+TOFqjtsP8/52MAMOL2fTveF4v7pB1kHw/kY8oFYzocfdwZKgkFbMDezc09VZASeww3d6t0HBoSFCwacGQX+PFUDylgLic3l3O5YvAfK29XhKA92/VpHQA+wEEriDo7nf7JcTV7G24FczQjH7m7g4vi/0fG3O9jsQhPbHRSYRdmzbpOXOBvvRNYef4/25LmX+5emBnw6ugxGNGhdHlhfeE4In3bhBTDln3AXf5X7xCuHr9pDb2eV2djvWje1cXhtZKxrvTc98dju6OvUcvdCUzPK9OxXCkgEBOY6CcUQYwHByyQi7H9NRiALi3ISvZS6OEt6pyANeO87v/O4LnF0ibvRv4y3yq8REm4oLnasV97fIl89xJvTiMe2E4XY66vsTDJw9NEo+eOKzawEpX4tcHCpvDPSTFxreJKwWoS6yGWNEfrWYbhQ6jGl+Ko90jsU7OtUI/Lu5XQmeigHJhh09Badxcei8MMfuqGme5VSEHuhvWBN2tyz2sl81pgcIreWYuKNTRQDMujTeZauFBjutp8B6et0rXBwar7eDr/EycaZzjOOjdcF32p7yq9bizkKX5BiEBkSFh+6gDpkKTmQL9yZrFLTjQySyy2B9sjCG4DDAAIWLQ+GlnLAIwY8utDbO+tVqEdnP/tFWyi2FLskxEhod0ERcaMlBCP87WryE5e9p/orGddnHmBuTL++TdoHCxZHlhaKSH2uDosoiTJDxSQi74lfGFD/wwi7EDz6iZq/uKBY5joUuyVEI/TyE42XazQN1tT/OXgnyaH4+flRoFNYezafpeLNC22vi1VCx0PKfHLi77WPCmV8LNQvd8FQ0oStBE7oSNKErQRO6EjShK0ETugoY8x+AmbrW4vsFBgAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, Image" Text="Código da Maquina" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto DelayBetweenKeys="{x:Null}" ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Senha'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="358,225" sap2010:WorkflowViewState.IdRef="NTypeInto_2" Text="teste">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="188, 251, 160, 36" ElementType="InputBox" FriendlyName="'text'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java idx='2' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java role='text' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKQAAAAoCAYAAABwx1HiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADESURBVHhe7dKxbcJQAEXR7C8RSsgCsILTQU3WIGv8yFIqm4LGcItzpCe9Ae7HgBBBkiJIUgRJyirI3efe7GVbWgV5OH6N2+3HbPPNrS2tgjydzuN+/zXbfHNrS6sgp+n7/8G2HrUmSN5GkKQIkhRBkiJIUgRJiiBJESQpgiRFkKQIkhRBkiJIUgRJiiBJESQpgiRFkKQIkhRBkiJIUgRJiiBJESQpgiRFkKQIkpSng7xcrmab76kg4Z0ESYogSREkIWP8AXp9H5tKju84AAAAAElFTkSuQmCC" InformativeScreenshot="bf48a5c47783e58085ae04828f687565.png" SearchSteps="FuzzySelector, Image">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="248, 221, 38, 24" ElementType="Text" FriendlyName="'Senha'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='Senha' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='Senha' role='label' check:text='Senha' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACoAAAAcCAYAAAAX4C3rAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFmSURBVFhH7ZQxjoQwDEX3PGiPM+dga26QcrenQXMHpFSpKVMjUafhDF47jkOChtmZIcWOlC8hATbm+TvJB7yJKmhpVdDSqqClVUFzzTBcvqFtRrDhzbPKQZfJF/z6/PFXe7nC0M/gQvh1IWhTChQhFRYjQNWNMHRX/3ym+KaSoGYMLk6Zg24JN6TE8bZBt80aAjJafIcNykQUTiPGPehRfAXbj9EojkltVjJ6LkZJN0ceHCdXtJlBd/xj7RvZvlXdBBab5txn4jjBmzHWbo0SwNYxF2Zg1/P72GmYAD+LYzLaFXRwOAU9jueymQmsHDRqBRc6ExgB3V+lQJ2hZbX94w4owiz5ukhdzO4xL14+8xxorE3Tw5p3HZVkSvC7PuluMJgQ1yivX9uTA/Ljc6AEJqCyqQ5BwXfCR5IAtgii485G7c5ZRaAPgPwZT08TrEknwzHoP1cFLa0KWloVtLQqaGm9CSjAL/eZL7WyuYDrAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" Text="Senha" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ClickType="Single" DisplayName="Click 'push button'" sap:VirtualizedContainerService.HintSize="358,165" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="198, 311, 140, 60" ElementType="Button" FriendlyName="'push button'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java role='push button' /&gt;" ImageBase64="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" InformativeScreenshot="23d6d66a53e719606583d22b721c4027.png" SearchSteps="Selector, FuzzySelector, Image">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="158, 101, 250, 32" ElementType="Text" FriendlyName="'Sistema de'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='Sistema de Totens da Alprime ' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='Sistema de Totens da Alprime ' role='label' check:text='Sistema de Totens da Alprime' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAP4AAAAkCAYAAACpM4cYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAU7SURBVHhe7Zo7biM5EIb3PMYex+fwxr6BwpnciTF3MODIsUPFAzgdJT5DbxXJ4rPILrnVY0j8P0CYEZuP4l+PZrf8zwIAmA4kPgATgsQHYEKQ+ABMCBIfgAlB4gMwIUh8ACYEiQ/AhCDxAZgQJD4AE4LEvyDHxx/Lf//+XJ7fQgO4CN+r6+fyev9jebh7WY6h5RZYTfzTx+/l+f6XEz7/HB7fl+NH6AQI0unuMgFyfPy1HEhz+YjmD3dlO/vgFMbcLpfTteHtJer62otl6fP4OzTcBsPEPz35oDvQplOAfS5Haj+QM7g9tsWq/BnaJmO3AJE7ziA4b5nddOUbmo/Zkbb7nDa+P1/6if8XKt0tHY1328vHuyuyD/fb7+7XqPdeiSfF9DAsqjueNr6ZbuLvHyS3JOp+e4mnrqetd4Zr1Hsfm0VTju1hnN/oMZ/pJr6Iw3eatWf5Vjw+yvjHgQf3POqvH2iuP+TMV26ja25+V3X951mC+4P60Hg/Rux4yaqyr9i+3V+Xz4H61e8k3B7CSOb09r7apw8/6rz4vbHtYR9ujjxAVvdgwXDMD+uIPW4d+jdquZPecb5Ct77f108rNl23+Y4IJyh5TM2LQI0W1724Y71yHaRfvJ758Jx5LfH8lVgbPOMnJ7oJ3cs87a5DVZmMThs3BCvRrbRytCXHxGCpK288/tKasoa08brxuSkJKuucOLhInOenNP+w6udo6xLNeMseLMT1OolDc8r1ZE+7Z2aT3vK92He9js3vKkZdN/nOEU4QMVZHia+cNlbsjKey0K9oi9T5QmjzSttKPMd+Z8ba8OWe55OqLAvuFywMZppFRDByEBmsBqwmqkMcUwV6tYbqrEyAhARjvU6ONWBXbI7ttj1YkH2qx/wYLG1RaMdt01tPrlo3WWPkd40V2y7iOw/fyOq+XY0Vf3WLROgrcwz9Zp3XFM82/2kYEj8hAZBPqAZFdvx0/alYFI7pGBbnp6rOlb3++DX0ZDaLR6cWd6Sk+bh/srFNoJw1p8satj1YGAe1noye5tomvTsJqBWeNb8rWHV1fNF3Dpmv2qPMUSdpq68ed0zZ91y/fT2ebf7TOSvxW2dQULDR9Skgg08Lbky2sXbzjKXCE6ZK6KnX4YrP393Pk8EpIrBanSN928o1jHuwoCVWZLRO65NNeneKxppumt9brLpu8R2hxkwg2FnO0WrYn6PqO1rLPK8lno3+63BG4ntjcmf0gqKgCeCOwU0/HbUSqnaU6+hBMq7Oka5t1V6Me7AwDmoOIK7q7TrtuG1660XDoJtlfqOum3zn+rFW1f4FLXaUNjXuiFqfXj+HdV5DPG+NtSLx/bM8iVT/VR4f4ULS5+KXmyaB+ZhHAucvI5rA6Rks7bkjaV0JcO80cXbpRDU4K/FaO9Kb0FJghWgbrRt18S8/i/GmPVhYC2oJgvw6H4O9PekPq4hNevN3HlsljYx16xj9rmHUdYvvhonIKEnW2q7EHT12iA0pJ/T4FEzzEqp2tZ0bY62643PwpBd58uHJ2z/RleBLRvufWqqxHBDFOL/ZNHe67goPzZmu8brpaGeqhIFGvHpuJ1DVZ4B7o1zZJv/Px6/uwUIvWXOoj2idfjbLk0+4tN6sRZlMNr/rmHT9qu869hc0fZR4Cv5w/VgjWttrVeWE+E1dT5lXtc8Yz8SWWDvvGR+ACVHvwFcOEh+AIfod+NpB4gMwwvK4cIUg8QGYECQ+ABOCxAdgQpD4AEwIEh+ACUHiAzAhSHwAJgSJD8CEIPEBmBAkPgDTsSz/A7a2nqerEe0uAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" Text="Sistema de Totens da Alprime" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp FilePath="C:\Program Files\Java\jdk1.8.0_251\bin\java.exe" IconBase64="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" InformativeScreenshot="58f5877e7f1b6755d8581f1500d2b6e8.png" Selector="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*'/&gt;" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard CloseMode="{x:Null}" OpenMode="{x:Null}" DisplayName="Use Application: " sap:VirtualizedContainerService.HintSize="520,8548" sap2010:WorkflowViewState.IdRef="NApplicationCard_3">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="508,8283" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGetText DisplayName="Get Text 'Fabricante:'" sap:VirtualizedContainerService.HintSize="466,165" sap2010:WorkflowViewState.IdRef="NGetText_1">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="28, 331, 63, 15" ElementType="Text" FriendlyName="'Fabricante:'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='Fabricante:' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='Fabricante:' role='label' /&gt;" InformativeScreenshot="5794610ecc670718ba827d8455ed3f70.png" SearchSteps="FuzzySelector" Text="Fabricante:" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("Text de Get Text 'Fabricante:'")]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Dell Inc.'" sap:VirtualizedContainerService.HintSize="466,165" sap2010:WorkflowViewState.IdRef="NGetText_2">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="148, 331, 44, 15" ElementType="Text" FriendlyName="'Dell Inc.'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='Dell Inc.' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='Dell Inc.' role='label' /&gt;" InformativeScreenshot="9c7cbaf2772fba7fdf4cfa75446d8623.png" SearchSteps="FuzzySelector" Text="Dell Inc." TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("Text de Get Text 'Dell Inc.'")]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Modelo:'" sap:VirtualizedContainerService.HintSize="466,165" sap2010:WorkflowViewState.IdRef="NGetText_3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="28, 351, 44, 15" ElementType="Text" FriendlyName="'Modelo:'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='Modelo:' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='Modelo:' role='label' /&gt;" InformativeScreenshot="dee15cec8f23332a11f202bb5e8f1006.png" SearchSteps="FuzzySelector" Text="Modelo:" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("Text de Get Text 'Modelo:'")]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Inspiron 15-3567'" sap:VirtualizedContainerService.HintSize="466,165" sap2010:WorkflowViewState.IdRef="NGetText_4">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="148, 351, 94, 15" ElementType="Text" FriendlyName="'Inspiron 15-3567'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='Inspiron 15-3567' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='Inspiron 15-3567' role='label' /&gt;" InformativeScreenshot="a55d01993cf8829452bf41b0759fa21a.png" SearchSteps="FuzzySelector" Text="Inspiron 15-3567" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("Text de Get Text 'Inspiron 15-3567'")]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'CPU:'" sap:VirtualizedContainerService.HintSize="466,165" sap2010:WorkflowViewState.IdRef="NGetText_5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="28, 381, 27, 15" ElementType="Text" FriendlyName="'CPU:'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='CPU:' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='CPU:' role='label' /&gt;" InformativeScreenshot="b00e3c7364c33155bd090ac8ad73de7a.png" SearchSteps="FuzzySelector" Text="CPU:" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("Text de Get Text 'CPU:'")]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Intel(R) Core(TM)'" sap:VirtualizedContainerService.HintSize="466,165" sap2010:WorkflowViewState.IdRef="NGetText_6">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="148, 381, 242, 15" ElementType="Text" FriendlyName="'Intel(R) Core(TM)'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz' role='label' /&gt;" InformativeScreenshot="4dec18b7a9a8582bef76ac065fa37b2b.png" SearchSteps="FuzzySelector" Text="Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("Text de Get Text 'Intel(R) Core(TM)'")]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Tamanho do Disco'" sap:VirtualizedContainerService.HintSize="466,165" sap2010:WorkflowViewState.IdRef="NGetText_7">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="28, 401, 105, 15" ElementType="Text" FriendlyName="'Tamanho do Disco'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='Tamanho do Disco' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='Tamanho do Disco' role='label' /&gt;" InformativeScreenshot="df1fe27b1e45a7782e6427d196785659.png" SearchSteps="FuzzySelector" Text="Tamanho do Disco" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("Text de Get Text 'Tamanho do Disco'")]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text '1999,11 GiB'" sap:VirtualizedContainerService.HintSize="466,165" sap2010:WorkflowViewState.IdRef="NGetText_8">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="148, 401, 68, 15" ElementType="Text" FriendlyName="'1999,11 GiB'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='1999,11 GiB' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='1999,11 GiB' role='label' /&gt;" InformativeScreenshot="7b45591ed993a464c450fc12bdf59e4d.png" SearchSteps="FuzzySelector" Text="1999,11 GiB" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("Text de Get Text '1999,11 GiB'")]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Memoria Ram Total:'" sap:VirtualizedContainerService.HintSize="466,165" sap2010:WorkflowViewState.IdRef="NGetText_9">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="28, 431, 113, 15" ElementType="Text" FriendlyName="'Memoria Ram Total:'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='Memoria Ram Total:' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='Memoria Ram Total:' role='label' /&gt;" InformativeScreenshot="3f9d0eb673a1d8a5583b88d3e07ef522.png" SearchSteps="FuzzySelector" Text="Memoria Ram Total:" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("Text de Get Text 'Memoria Ram Total:'")]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text '7,9 GiB'" sap:VirtualizedContainerService.HintSize="466,165" sap2010:WorkflowViewState.IdRef="NGetText_10">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="148, 431, 40, 15" ElementType="Text" FriendlyName="'7,9 GiB'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='7,9 GiB' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='7,9 GiB' role='label' /&gt;" InformativeScreenshot="33a1d98e80c914fc028570aa1026c00d.png" SearchSteps="FuzzySelector" Text="7,9 GiB" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("Text de Get Text '7,9 GiB'")]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Sistema Op:'" sap:VirtualizedContainerService.HintSize="466,165" sap2010:WorkflowViewState.IdRef="NGetText_11">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="28, 461, 69, 15" ElementType="Text" FriendlyName="'Sistema Op:'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='Sistema Op:' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='Sistema Op:' role='label' /&gt;" InformativeScreenshot="7b17dc2c6a0ff34cd39ad3267a1c7571.png" SearchSteps="FuzzySelector" Text="Sistema Op:" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("Text de Get Text 'Sistema Op:'")]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Windows'" sap:VirtualizedContainerService.HintSize="466,165" sap2010:WorkflowViewState.IdRef="NGetText_12">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="148, 461, 51, 15" ElementType="Text" FriendlyName="'Windows'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='Windows' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='Windows' role='label' /&gt;" InformativeScreenshot="344810c614cff91544284c0ce8a4933e.png" SearchSteps="FuzzySelector" Text="Windows" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("Text de Get Text 'Windows'")]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Computador:'" sap:VirtualizedContainerService.HintSize="466,165" sap2010:WorkflowViewState.IdRef="NGetText_13">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="28, 491, 73, 15" ElementType="Text" FriendlyName="'Computador:'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='Computador:' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='Computador:' role='label' /&gt;" InformativeScreenshot="9062e4d0089f685b3cd34ca0adc6a4e8.png" SearchSteps="FuzzySelector" Text="Computador:" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("Text de Get Text 'Computador:'")]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'GABRIELVIEIRA'" sap:VirtualizedContainerService.HintSize="466,165" sap2010:WorkflowViewState.IdRef="NGetText_14">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="148, 491, 88, 15" ElementType="Text" FriendlyName="'GABRIELVIEIRA'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='GABRIELVIEIRA' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='GABRIELVIEIRA' role='label' /&gt;" InformativeScreenshot="3da4b6f1a0e6709a13e52747a4d9c0dd.png" SearchSteps="FuzzySelector" Text="GABRIELVIEIRA" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("Text de Get Text 'GABRIELVIEIRA'")]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Estação:'" sap:VirtualizedContainerService.HintSize="466,165" sap2010:WorkflowViewState.IdRef="NGetText_15">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="518, 191, 49, 15" ElementType="Text" FriendlyName="'Estação:'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='Estação:' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='Estação:' role='label' /&gt;" InformativeScreenshot="5e166f605359a0895645495e2fa4e69c.png" SearchSteps="FuzzySelector" Text="Estação:" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("Text de Get Text 'Estação:'")]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Giovanni Gronchi'" sap:VirtualizedContainerService.HintSize="466,165" sap2010:WorkflowViewState.IdRef="NGetText_16">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="578, 191, 94, 15" ElementType="Text" FriendlyName="'Giovanni Gronchi'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='Giovanni Gronchi' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='Giovanni Gronchi' role='label' /&gt;" InformativeScreenshot="00ac52560a3f81f16961934a81b74837.png" SearchSteps="FuzzySelector" Text="Giovanni Gronchi" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("Text de Get Text 'Giovanni Gronchi'")]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Linha:'" sap:VirtualizedContainerService.HintSize="466,165" sap2010:WorkflowViewState.IdRef="NGetText_17">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="248, 191, 34, 15" ElementType="Text" FriendlyName="'Linha:'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='Linha:' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='Linha:' role='label' /&gt;" InformativeScreenshot="9f4628e1958ba81f16bd648fe3f9a96a.png" SearchSteps="FuzzySelector" Text="Linha:" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("Text de Get Text 'Linha:'")]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Lilás'" sap:VirtualizedContainerService.HintSize="466,165" sap2010:WorkflowViewState.IdRef="NGetText_18">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="298, 191, 27, 15" ElementType="Text" FriendlyName="'Lilás'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='Lilás' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='Lilás' role='label' /&gt;" InformativeScreenshot="9787cf222ca3d14f7d4e6202ad7e2708.png" SearchSteps="FuzzySelector" Text="Lilás" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("Text de Get Text 'Lilás'")]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Gabriel'" sap:VirtualizedContainerService.HintSize="466,165" sap2010:WorkflowViewState.IdRef="NGetText_19">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="28, 51, 40, 20" ElementType="Text" FriendlyName="'Gabriel'" FullSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*' /&gt;&lt;java name='Gabriel' role='label' /&gt;" FuzzySelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' /&gt;&lt;java name='Gabriel' role='label' /&gt;" InformativeScreenshot="073ea667806c9fcecb13292fa17f9e99.png" SearchSteps="FuzzySelector" Text="Gabriel" TextMethod="AttributeText" TextSelector="&lt;java role='label' /&gt;" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("Text de Get Text 'Gabriel'")]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <ueab:ExcelApplicationCard Password="{x:Null}" DisplayName="Utilizar Ficheiro do Excel" sap:VirtualizedContainerService.HintSize="466,4298" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" WorkbookPath="informacoes_computador.xlsx">
+              <ueab:ExcelApplicationCard.Body>
+                <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                  </ActivityAction.Argument>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="454,4070" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Plan1&quot;).Cell(&quot;A5&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[Saved.Values(Of ExcelValue)(&quot;Text de Get Text 'Fabricante:'&quot;)]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ueab:WriteCellX>
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Plan1&quot;).Cell(&quot;B5&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_2" Value="[Saved.Values(Of ExcelValue)(&quot;Text de Get Text 'Dell Inc.'&quot;)]" />
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Plan1&quot;).Cell(&quot;A6&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_3" Value="[Saved.Values(Of ExcelValue)(&quot;Text de Get Text 'Modelo:'&quot;)]" />
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Plan1&quot;).Cell(&quot;B6&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_4" Value="[Saved.Values(Of ExcelValue)(&quot;Text de Get Text 'Inspiron 15-3567'&quot;)]" />
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Plan1&quot;).Cell(&quot;A7&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_5" Value="[Saved.Values(Of ExcelValue)(&quot;Text de Get Text 'CPU:'&quot;)]" />
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Plan1&quot;).Cell(&quot;B7&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_6" Value="[Saved.Values(Of ExcelValue)(&quot;Text de Get Text 'Intel(R) Core(TM)'&quot;)]" />
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Plan1&quot;).Cell(&quot;A8&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_7" Value="[Saved.Values(Of ExcelValue)(&quot;Text de Get Text 'Tamanho do Disco'&quot;)]" />
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Plan1&quot;).Cell(&quot;B8&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_8" Value="[Saved.Values(Of ExcelValue)(&quot;Text de Get Text '1999,11 GiB'&quot;)]" />
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Plan1&quot;).Cell(&quot;A9&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_9" Value="[Saved.Values(Of ExcelValue)(&quot;Text de Get Text 'Memoria Ram Total:'&quot;)]" />
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Plan1&quot;).Cell(&quot;B9&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_10" Value="[Saved.Values(Of ExcelValue)(&quot;Text de Get Text '7,9 GiB'&quot;)]" />
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Plan1&quot;).Cell(&quot;A10&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_11" Value="[Saved.Values(Of ExcelValue)(&quot;Text de Get Text 'Sistema Op:'&quot;)]" />
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Plan1&quot;).Cell(&quot;B10&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_12" Value="[Saved.Values(Of ExcelValue)(&quot;Text de Get Text 'Windows'&quot;)]" />
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Plan1&quot;).Cell(&quot;A11&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_13" Value="[Saved.Values(Of ExcelValue)(&quot;Text de Get Text 'Computador:'&quot;)]" />
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Plan1&quot;).Cell(&quot;B11&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_14" Value="[Saved.Values(Of ExcelValue)(&quot;Text de Get Text 'GABRIELVIEIRA'&quot;)]" />
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Plan1&quot;).Cell(&quot;D5&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_15" Value="[Saved.Values(Of ExcelValue)(&quot;Text de Get Text 'Estação:'&quot;)]" />
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Plan1&quot;).Cell(&quot;E5&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_16" Value="[Saved.Values(Of ExcelValue)(&quot;Text de Get Text 'Giovanni Gronchi'&quot;)]" />
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Plan1&quot;).Cell(&quot;D6&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_17" Value="[Saved.Values(Of ExcelValue)(&quot;Text de Get Text 'Linha:'&quot;)]" />
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Plan1&quot;).Cell(&quot;E6&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_18" Value="[Saved.Values(Of ExcelValue)(&quot;Text de Get Text 'Lilás'&quot;)]" />
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Plan1&quot;).Cell(&quot;A1&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_19" Value="[string.Format(&quot;Usuário:&quot;)]" />
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Plan1&quot;).Cell(&quot;B1&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="412,161" sap2010:WorkflowViewState.IdRef="WriteCellX_20" Value="[Saved.Values(Of ExcelValue)(&quot;Text de Get Text 'Gabriel'&quot;)]" />
+                  </Sequence>
+                </ActivityAction>
+              </ueab:ExcelApplicationCard.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ueab:ExcelApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp FilePath="C:\Program Files\Java\jdk1.8.0_251\bin\java.exe" IconBase64="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" InformativeScreenshot="37c4a6c052cdcb39220f71103587326e.png" Selector="&lt;wnd app='java*.exe' cls='SunAwtFrame' idx='*'/&gt;" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </ueab:SequenceX>
+</Activity>

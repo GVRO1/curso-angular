@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/Corpo.css">
+    <link rel="stylesheet" href="./css/Cadastro.css">
+    <title>Cadastro</title>
+</head>
+
+<body >
+    <div class="display">
+        <div class="central">
+            <div class="topo">
+                <img src="./Imagens/logo_editado.png" alt="ERRO LOGO">
+                <div class="options">
+                    <a href="Home.html">Home</a>
+                    <a href="SobreNos.html">Sobre Nós</a>
+                    <a href="nossoProduto.html">Nosso Produto</a>
+                    <a href="nossoParceiro.html">Seja um Parceiro</a>
+                    <button onclick="window.location.href='Login.html';">LOGAR</button>
+                </div>
+            </div>
+            <h1 class="titulo1">Cadastre-se e controle seus totens</h1>
+            <h2 class="titulo2">Parte 1/2 - Dados Pessoais</h2>
+
+
+
+                <div class="cadastrar">
+                    <div class="esquerda ">
+                        <label>Nome:</label><br>
+                        <input id="nome" name="nome" type="text"><br>
+                        <h6 id="AlertaNome">asasdds</h6>
+                        <label>Telefone:</label><br>
+                        <input id="telefone" name="telefone" type="text"><br>
+                        <h6 id="AlertaTelefone">asasdds</h6>
+                        <label>senha:</label><br>
+                        <input id="senha" name="senha" type="password"><br>
+                        <h6 id="AlertaSenha">asasdds</h6>
+                        
+                    </div>
+                    <div class="direita">
+                        <label>Email:</label><br>
+                        <input id="email" name="email" type="email"><br>
+                        <h6 id="AlertaEmail">asasdds</h6>
+                        <label>CPF:</label><br>
+                        <input id="cpf" name="CPF" type="text"><br>
+                        <h6 id="AlertaCPF">asasdds</h6>
+                        <label>Confirmar Senha:</label><br>
+                        <input id="senha_repetida" type="password">
+                        <h6 id="AlertaConfSenha">asasdds</h6>
+                    </div>
+                </div>
+                
+                <button onclick="guardarDados()" class="continuar">Continuar</button>
+
+            <div class="fotos">
+                <img src="./Imagens/CPTM.png" alt="ERRO LOGO" style="width: 22%;">
+                <img src="./Imagens/BOM.png" alt="ERRO LOGO" style="height: 100%;">
+                <img src="./Imagens/bilhete-unico.png" alt="ERRO LOGO">
+                <img src="./Imagens/SPTrans.png" alt="" style="width: 12%;">
+            </div>
+
+
+            <div class="finalDisplay">
+                <div class="finalInfo vertical">
+                    <h1>Contato</h1>
+                    <a href="">Tel: +55 (11) 94002-8922</a><br><br>
+                    <a href="">Email: alprime@bandtec.com.br</a><br><br>
+                </div>
+                <div class="finalInfo">
+                    <h1>Endereço</h1>
+                    <a href="">Rua Haddok Lobo, 624 - Jardins São Paulo (SP)</a><br><br>
+                    <a href="">Cep: 09284-030</a><br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="./JavaScript/cadastro.js"></script>

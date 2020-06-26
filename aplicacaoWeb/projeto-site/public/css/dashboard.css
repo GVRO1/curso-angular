@@ -1,0 +1,29 @@
+.grafico_processador {
+    position: absolute;
+    top: 16vh;
+    left: 0vh;
+}
+
+.grafico_disco {
+    position: absolute;
+    top: 16vh;
+    left: 100vh;
+}
+
+.grafico_memoria {
+    position: absolute;
+    top: 76vh;
+    left: 0vh;
+}
+
+.grafico_ram {
+    position: absolute;
+    top: 76vh;
+    left: 100vh;
+}
+
+.grafico_temperatura {
+    position: absolute;
+    top: 136vh;
+    left: 60vh;
+}

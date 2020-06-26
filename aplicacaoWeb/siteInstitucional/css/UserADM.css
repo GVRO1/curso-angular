@@ -1,0 +1,72 @@
+h3{
+    color: #4DB033;
+}
+select{
+    width: 20%;
+}
+.opcoes{
+    margin-left: 10%;
+    margin-top: 30px;
+    justify-content: space-evenly !important;
+    text-align: center;
+    width: 80%;
+}
+.opcoes img{
+    background-color: #4DB033;
+}
+.opcoes button{
+    background-color: blueviolet;
+    border-radius: 20px;
+    margin: auto;
+    width: 30%;
+    height: 50px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.opcoes button:hover{
+    color: white;
+    transition: 0.5s;
+}
+.resultado{
+    color: blueviolet;
+    justify-content: space-evenly;
+    text-align: center;
+}
+.resultado h6{
+    font-size: xx-large;
+    margin-top: 100px;
+    margin-bottom: 0px;
+}
+.resultado h5{
+    margin: 0px;
+    font-size: large;
+    margin-bottom: 100px;
+}
+.resultado input{
+    margin-bottom: 100px;
+}
+.resultado a{
+    padding: 0px 30px 0px 30px;
+    cursor: pointer;    
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .options a{
+    font-size: large;
+    transition: 0.5s;
+    }
+}
+
+@media only screen and (max-width: 950px){
+    .escrita{
+        width: 100%;
+        font-size: 1.3em;
+        transition: 0.5s;
+    }
+    .topo img{
+        height: 160px;
+        margin-top: 60px;
+        margin-left: -22px;
+    }
+}

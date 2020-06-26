@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="teste.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+        
+        Quantos totens?
+        <input type="text" name="" id="numerozinho"> <br>
+        <button onclick="enviar()">Enviar</button>
+    <section id="aloalo" ></section>
+    
+  </body>
+</html>
+
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    <script>
+
+      
+
+        function enviar(){
+            var contador = 0;
+            aloalo.innerHTML = '';
+
+            for(contador; contador < numerozinho.value; contador++){
+                aloalo.innerHTML += `<div id="div_oi" class="row">
+        <div class="div-teste col-xl-5">
+           <p style="text-align: center;"> Informações do toten </p>    
+           <div class="alerta"><b>Alerta Temperatura</b></div>
+        <div class="row">
+            <div style="height: 180px;">
+           <div class="infos">
+              <p style="text-align: center; margin-top: 63px;"></p>
+           </div>
+            </div>
+            <div class="col-xl">
+                <div class="batat">
+                    <br>
+                     <p>Nome: </p> 
+                     <p>Numero identificador: </p>
+                     <p>Transações: </p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="div-teste col-xl-7">
+            <div class="row">
+            <div style="border-right: 2px solid black;" class="teste-filho col-xl">
+               <p> CPU </p>
+               <div class="cpu">
+                   <p style="font-size: 50px;"> 70% </p>
+               </div>
+            </div>
+            <div  style="border-right: 2px solid black;" class="teste-filho col-xl">
+                <p> Memoria </p>
+                <div class="memoria">
+                    <p style="font-size: 50px;"> 70% </p>
+                </div>
+            </div>
+            <div class="teste-filho col-xl">
+                <p> Disco </p>
+                <div class="disco">
+                    <p style="font-size: 50px;"> 70% </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>`
+            }
+        }
+
+
+
+    </script>

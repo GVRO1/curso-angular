@@ -1,0 +1,90 @@
+html{min-width: 810px !important;}
+
+table {
+    font: 75%/2 "Myriad Pro", Frutiger, "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", Verdana, sans-serif;
+    /* margin-top: 120px; */
+    border-collapse: collapse;
+    width: 50em;
+    margin-left: 10%;
+    width: 80%;
+    border: 2px solid rgb(44, 44, 44)  !important;
+    min-height: 500px;
+}
+caption{
+    font-size: 25px;
+    color: #6f2c91;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+thead {
+  background: rgb(107, 107, 107) ;
+  color: white;
+  font-size: small;
+}
+/* tr:nth-child(even) {
+      background-color: #ffffff;
+} */
+th {
+    text-align: center !important;
+    font-weight: normal;
+    text-align: left;
+    border-right: 1px solid darkgrey;
+    font-weight: bold;
+    
+}
+td {
+    text-align: center;
+    border-bottom:1px solid darkgrey;
+    border-right: 1px solid darkgrey;
+    color: black;
+    font-size: small;
+    font-weight: bold;
+}
+
+table button{
+    color: white;
+    min-width: min-content;
+    min-height: 40px;
+    border-radius: 20px;
+    background-color: #4DB033;
+    width: 80%; 
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10%;
+}
+
+.voltar{
+    min-width: min-content;
+    background-color: blueviolet;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 45%;
+    width: 10%;
+    height: 35px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.voltar:hover{
+    color: white;
+    transition: 0.5s;
+}
+
+h1{
+    text-align: center;
+    color: #6f2c91;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+select{
+    text-align-last: center;
+    height: 23px;
+    margin-top: 0px;
+    width: 30%;
+    margin-left: 35%;
+    border-radius: 7px;
+    border: inset 2px; 
+    border-color: #4DB033;
+    text-shadow: blue;
+}

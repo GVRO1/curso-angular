@@ -1,0 +1,112 @@
+html{min-width: 810px;}
+
+body{
+    visibility:hidden;
+    margin: 0px;
+    background-color: #6f2c91;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.display{
+    display: flex;
+}
+
+.vertical{border-right: double #6f2c91;}
+
+.central{
+    width: 80%;
+    background-color: white;
+    margin-left: 10%;
+}
+.topo{
+    display: flex;
+    border-bottom: double #6f2c91;
+    height: 60px;
+    align-items: center;
+}
+.topo img{
+    height: 250px;
+    margin-top: 70px;
+    margin-left: -22px;
+    transition: 0.5s;
+}
+.options{
+    display: contents;
+    width: 100%;
+}
+.options a{
+    color: rgb(68, 20, 112);
+    text-decoration: none;
+    margin-left: auto;
+    font-weight: bold;
+    font-size: large;
+    transition: 0.5s;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.options a:hover{
+    color: red ;
+}
+.options button{
+    cursor: pointer;
+    min-width: min-content;
+    background-color: #6f2c91;
+    border: #6f2c91;
+    color: white;
+    border-radius: 15px;
+    margin: auto;
+    width: 10%;
+    height: 55%;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.options button:hover{
+    color: #14001f;
+    transition: 0.5s;
+}
+.fotos{
+    border-bottom: double #6f2c91;
+    border-top: double #6f2c91;
+    display: flex;
+    height: 150px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.fotos img{
+    height: 45%;
+    width: 12%;
+}
+.finalDisplay{
+    display: flex;
+    justify-content: space-evenly;
+}
+.finalInfo{
+    text-align: -webkit-center;
+    width: 100%;
+}
+.finalInfo h1{
+    text-align: -webkit-center;
+    color: #4DB033 !important;
+    margin-left: 5%;
+}
+.finalInfo a{
+    margin-left: 5%;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .options a{
+    font-size: large;
+    transition: 0.5s;
+    }
+}
+
+@media only screen and (max-width: 950px){
+    .topo img{
+        height: 160px;
+        margin-top: 60px;
+        margin-left: -22px;
+        transition: 0.5s;
+    }
+}

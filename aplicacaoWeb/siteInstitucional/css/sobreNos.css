@@ -1,0 +1,79 @@
+.info{
+    text-align: -webkit-center;
+    width: 60%;
+}
+.info h1{
+    color: #4DB033;
+    font-size: 3em;
+}
+.escrita{
+    width: 80%;
+    font-size: 1.5em;
+    transition: 0.5s;
+    margin-bottom: 15px;
+}
+.info button:hover{
+    color: white;
+    transition: 0.5s;
+}
+.equipe{
+    color: rgb(62, 145, 41);
+    border-top: double blueviolet;
+    justify-content: space-evenly ;
+    text-align: -webkit-center ;
+}
+.link{
+    display: flexbox;
+    width: 20%;
+}
+.link img {
+    width: 100px;
+    border-radius: 50px;
+}
+.link h6{
+    color: rgb(73, 184, 46);
+    margin: 0px;
+}
+.link h4{
+    margin-top: 0px;
+}
+.logo2{
+    height: 100%;
+    width: 40%;
+    text-align: -webkit-center;
+}
+.logo2-1{
+    transition: 0.5s;
+    width: 60%;
+    margin-top: 50px;
+}
+.logo2-2{
+    width: 100%;
+}
+@media only screen and (max-width: 1200px) {
+    .options a{
+    font-size: large;
+    transition: 0.5s;
+    }
+    .escrita{
+        width: 100%;
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 950px){
+    .escrita{
+        width: 100%;
+        font-size: 1.3em;
+        transition: 0.5s;
+    }
+    .topo img{
+        height: 160px;
+        margin-top: 60px;
+        margin-left: -22px;
+    }
+    .logo2-1{
+        margin-top: 100px;
+        transition: 0.5s;
+    }
+}

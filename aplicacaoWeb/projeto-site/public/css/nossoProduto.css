@@ -1,0 +1,98 @@
+.info{
+    text-align: -webkit-center;
+    width: 60%;
+}
+.info h1{
+    color: #4DB033;
+    font-size: 3em;
+}
+.escrita{
+    margin-left: 3vw;
+    font-size: 1.5em;
+    transition: 0.5s;
+    margin-bottom: 15px;
+    text-align: justify;
+    word-spacing: 3px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.info button{
+    font-weight: bold;
+    height: 45px;
+    margin-left: 75%;
+    min-width: 160px;
+    margin-bottom: 30px;
+    transition: 0.5s;
+    background-color: #6f2c91;
+    cursor: pointer;
+    border: #6f2c91;
+    color: white;
+    border-radius: 15px;
+}
+.info button:hover{
+    color: #190024;
+    transition: 0.5s;
+    font-weight: bold;
+
+}
+.logo{
+    transition: 0.5s;
+    margin-top: 200px;
+    margin-left: 60px;
+}
+.logo img{
+    width: 100%;
+}
+@media only screen and (max-width: 1200px) {
+    .options a{
+    font-size: large;
+    transition: 0.5s;
+    }
+    .escrita{
+        width: 100%;
+        font-size: 1.5em;
+    }
+    .logo img{
+        margin-top: 20%;
+        transition: 0.5s;
+    }
+}
+
+@media only screen and (max-width: 950px){
+    .escrita{
+        width: 100%;
+        font-size: 1.3em;
+        transition: 0.5s;
+    }
+    .topo img{
+        height: 160px;
+        margin-top: 60px;
+        margin-left: -22px;
+    }
+    .logo img{
+        margin-top: 40%;
+        transition: 0.5s;
+    }
+}
+
+
+
+@media only screen and (max-width: 600px){
+    .logo img{
+        display: none;
+    }
+    .info{
+        width: 120%;
+    }
+    .info h1{
+        
+        margin-left: 10%;
+        width: 100%;
+    }
+    .info button{
+    margin-left: 20%;
+    color: white;
+    }
+    .escrita{
+        margin-left: 10%;
+    }
+}
