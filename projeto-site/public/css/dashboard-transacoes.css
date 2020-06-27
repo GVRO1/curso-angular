@@ -8,6 +8,7 @@ canvas {
 .grafico{
     width: 75%;
     text-align: center;
+    margin-top: 25px;
     margin-bottom: 30px;
     margin-left: 12.5%;
 }
@@ -26,7 +27,7 @@ canvas {
 
 .tabela{
     width: 60%;
-    margin-left: 15%;
+    margin-left: 22%;
     margin-bottom: 20px;
     border: double;
 }
@@ -39,17 +40,48 @@ canvas {
 
 .voltar{
     min-width: min-content;
-    background-color: blueviolet;
+    background-color: #6f2c91;
+    border: #6f2c91;
     border-radius: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 45%;
-    width: 10%;
+    width: 12%;
     height: 35px;
     font-weight: bold;
     transition: 0.5s;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-family: Arial;
 }
 .voltar:hover{
-    color: white;
+    color: #13011b;
     transition: 0.5s;
+}
+
+.dataMonitoramneto{
+    width: 50%;
+    margin-left: 37%;
+    margin-top: 15px;
+}
+.monitorarData{
+    /* text-align: -webkit-center; */
+    display: flex;
+}
+.monitorarData input{
+    height: 20px;
+    margin-top: 0px;
+    width: 55%;
+    border-radius: 7px;
+    border-color: #4DB033;
+    text-shadow: blue;
+}
+
+.monitorarData label{
+    font-size: large;
+    color: #6f2c91;
+    font-weight: bold;
+    text-align: left !important;
+    margin-left: 0%;
 }
