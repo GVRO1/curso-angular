@@ -59,7 +59,6 @@ public class QueryBD {
 
         Maquina resultado = jdbcTemplate.queryForObject("select * from maquina where id_maquina = ?",
                 new BeanPropertyRowMapper<Maquina>(Maquina.class), idMaquina);
-
         Localizacao localizacao = jdbcTemplate.queryForObject("select localizacao.* from maquina, localizacao where fk_localizacao = id_localizacao AND id_maquina = ?",
                 new BeanPropertyRowMapper<Localizacao>(Localizacao.class), idMaquina);
         Usuario usuario = jdbcTemplate.queryForObject("select usuario.* from maquina, localizacao, usuario where maquina.fk_localizacao = id_localizacao AND usuario.fk_localizacao = id_localizacao AND id_maquina = ?",

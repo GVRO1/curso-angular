@@ -36,11 +36,9 @@ public class Consumo {
     {
         
         cpuUso = Consumo.pegarCpu();
-        tempCPU = Consumo.pegarTemperaturaOshi();
-        
+        tempCPU = Consumo.pegarTemperaturaJsensor();
         consumoRAM = Consumo.monitorarRam();
         consumoMemoria = Consumo.monitorarMemoria();
-        
         consumoDisco = Consumo.monitorarConsumoDisco();
         tamanhoDisco = Consumo.pegarTamanhoDisco();
         
@@ -84,7 +82,7 @@ public class Consumo {
     }
                 
     
-    public static Double pegarTemperaturaCPU() 
+    public static Double pegarTemperaturaJsensor() 
     {
         Cpu cpu = JSensors.get.components().cpus.get(0);
         if (cpu.sensors.temperatures != null && cpu.sensors.temperatures.size() > 0){
@@ -116,18 +114,17 @@ public class Consumo {
         return usoCpu * 100;
     }
 
-    public static Double monitorarMemoria() 
-    {
+    public static Double monitorarMemoria() {
         List<OSFileStore> memoria = INFO_SO.getFileSystem().getFileStores();
-        Double memoriaRestante = 0.0;
+        Double memoriaLivre = 0.0;
         Double memoriaTotal = 0.0;
-        for (OSFileStore reparticoes : memoria) 
-        {
-            memoriaRestante += Converssao.bytesParaBits(reparticoes.getFreeSpace());
-            memoriaTotal += Converssao.bytesParaBits(reparticoes.getTotalSpace());
+        for (OSFileStore reparticoes : memoria) {
+            memoriaLivre += reparticoes.getFreeSpace();
+            memoriaTotal += reparticoes.getTotalSpace();
+            System.out.println(memoriaLivre * 100 / memoriaTotal);
+
         }
-        Double memoriaUsada = memoriaTotal - memoriaRestante;
-        return memoriaUsada * 100 / memoriaTotal;
+        return (memoriaTotal - memoriaLivre) * 100 / memoriaTotal;
     }
     
     public static Double pegarTamanhoDisco()

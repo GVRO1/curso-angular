@@ -25,6 +25,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import oshi.SystemInfo;
 
 /**
  *
@@ -53,8 +54,11 @@ public class TelaMonitoramento extends javax.swing.JFrame {
             Logger.getLogger(TelaMonitoramento.class.getName()).log(Level.SEVERE, null, ex);
         }
         initComponents();
-        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/logo_alprime_reduzido.png")));
         maquinaBD = QueryBD.procurarIdMaquina(idMaquina);
+        String enderecoImagem = String.format("/linha_%s.png", maquinaBD.getLocalizacao().getTipoLinha());
+        System.out.println(enderecoImagem);
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource(enderecoImagem))); // NOI18N  
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/logo_alprime_reduzido.png")));
         System.out.println(QueryBD.procurarIdMaquina(idMaquina));
         localizacao = maquinaBD.getLocalizacao();
         maquinaAtualizada = new Maquina(localizacao);
@@ -147,8 +151,12 @@ public class TelaMonitoramento extends javax.swing.JFrame {
         System.out.println("Antes de atualizar dados " + monitorando);
         while (monitorando) {
             Registro registro = new Registro(maquinaBD);
-            System.out.println(registro);
             QueryBD.insertRegistro(registro);
+            SystemInfo infoSistema = new SystemInfo();
+            if (infoSistema.getOperatingSystem().getFamily().equals("Windows")) {
+            } else {
+                registro.setTempCpu(0.0);
+            }
             TemperaturaAlerta temperaturaAlerta = QueryBD.mediaTemperatura(maquinaBD);
 
 //            registro.setPorcProcessador(91.0);
@@ -159,64 +167,65 @@ public class TelaMonitoramento extends javax.swing.JFrame {
                 pgbUsoCpu.setForeground(new Color(215, 217, 58));
             }
             if (pgbUsoCpu.getValue() < 50) {
-                pgbUsoCpu.setForeground(new Color(82,186,54));
+                pgbUsoCpu.setForeground(new Color(82, 186, 54));
             }
             if (pgbUsoCpu.getValue() > 80) {
-                pgbUsoCpu.setForeground(new Color(255,33,77));
+                pgbUsoCpu.setForeground(new Color(255, 33, 77));
             }
-            
+
             if (pgbUsoDisco.getValue() > 50 && pgbUsoDisco.getValue() < 80) {
                 pgbUsoDisco.setForeground(new Color(215, 217, 58));
             }
             if (pgbUsoDisco.getValue() < 50) {
-                pgbUsoDisco.setForeground(new Color(82,186,54));
+                pgbUsoDisco.setForeground(new Color(82, 186, 54));
             }
             if (pgbUsoDisco.getValue() > 80) {
-                pgbUsoDisco.setForeground(new Color(255,33,77));
+                pgbUsoDisco.setForeground(new Color(255, 33, 77));
             }
             if (pgbUsoRAM.getValue() > 50 && pgbUsoRAM.getValue() < 80) {
                 pgbUsoRAM.setForeground(new Color(215, 217, 58));
             }
             if (pgbUsoRAM.getValue() < 50) {
-                pgbUsoRAM.setForeground(new Color(82,186,54));
+                pgbUsoRAM.setForeground(new Color(82, 186, 54));
             }
             if (pgbUsoRAM.getValue() > 80) {
-                pgbUsoRAM.setForeground(new Color(255,33,77));
+                pgbUsoRAM.setForeground(new Color(255, 33, 77));
             }
             if (pgbTempCPU.getValue() > 50 && pgbTempCPU.getValue() < 80) {
                 pgbTempCPU.setForeground(new Color(215, 217, 58));
             }
             if (pgbTempCPU.getValue() < 50) {
-                pgbTempCPU.setForeground(new Color(82,186,54));
+                pgbTempCPU.setForeground(new Color(82, 186, 54));
             }
             if (pgbTempCPU.getValue() > 80) {
-                pgbTempCPU.setForeground(new Color(255,33,77));
+                pgbTempCPU.setForeground(new Color(255, 33, 77));
             }
-            
-            if (registro.getTemperaturaCpu() >= temperaturaAlerta.getTempPerigo()) {
-                if (contadorPerigoTemperatura == 0) {
-                    BotTelegram botTelegram = new BotTelegram(maquinaBD, maquinaBD.getLocalizacao().getUsuario().getChatId());
-                    botTelegram.enviarMensagem(temperaturaAlerta.mensagemPerigo(maquinaBD, registro));
-                    Log log = new Log(maquinaBD.getIdMaquina(), 1);
-                    String mensagem = String.format("Alerta de temperatura sobre a maquina '%d', enviada para o chat: %s", maquinaBD.getIdMaquina(), maquinaBD.getLocalizacao().getUsuario().getChatId());
-                    MensagemLog mensagemLog = new MensagemLog(maquinaBD.getIdMaquina(), mensagem, "ALERTA");
-                    log.escrever(mensagemLog);
-                    contadorPerigoTemperatura++;
-                    Aviso aviso = new Aviso(1, "CRITICA", "Temperatura do processador muito alta", false, maquinaBD);
-                    QueryBD.inserirAviso(aviso);
-                }
+            if (registro.getTemperaturaCpu() != 0.0) {
+                if (registro.getTemperaturaCpu() >= temperaturaAlerta.getTempPerigo()) {
+                    if (contadorPerigoTemperatura == 0) {
+                        BotTelegram botTelegram = new BotTelegram(maquinaBD, maquinaBD.getLocalizacao().getUsuario().getChatId());
+                        botTelegram.enviarMensagem(temperaturaAlerta.mensagemPerigo(maquinaBD, registro));
+                        Log log = new Log(maquinaBD.getIdMaquina(), 1);
+                        String mensagem = String.format("Alerta de temperatura sobre a maquina '%d', enviada para o chat: %s", maquinaBD.getIdMaquina(), maquinaBD.getLocalizacao().getUsuario().getChatId());
+                        MensagemLog mensagemLog = new MensagemLog(maquinaBD.getIdMaquina(), mensagem, "ALERTA");
+                        log.escrever(mensagemLog);
+                        contadorPerigoTemperatura++;
+                        Aviso aviso = new Aviso(1, "CRITICA", "Temperatura do processador muito alta", false, maquinaBD);
+                        QueryBD.inserirAviso(aviso);
+                    }
 
-            } else if (registro.getTemperaturaCpu() >= temperaturaAlerta.getTempAtencao()) {
-                if (contadorAlertaTemperatura == 0) {
-                    BotTelegram botTelegram = new BotTelegram(maquinaBD, maquinaBD.getLocalizacao().getUsuario().getChatId());
-                    botTelegram.enviarMensagem(temperaturaAlerta.mensagemAtencao(maquinaBD, registro));
-                    Log log = new Log(maquinaBD.getIdMaquina(), 1);
-                    String mensagem = String.format("Aviso urgênte de temperatura sobre a maquina '%d', enviada para o chat: %s", maquinaBD.getIdMaquina(), maquinaBD.getLocalizacao().getUsuario().getChatId());
-                    MensagemLog mensagemLog = new MensagemLog(maquinaBD.getIdMaquina(), mensagem, "PERIGO");
-                    log.escrever(mensagemLog);
-                    Aviso aviso = new Aviso(1, "ALERTA", "Temperatura do processador acima do normal", false, maquinaBD);
-                    QueryBD.inserirAviso(aviso);
-                    contadorAlertaTemperatura++;
+                } else if (registro.getTemperaturaCpu() >= temperaturaAlerta.getTempAtencao()) {
+                    if (contadorAlertaTemperatura == 0) {
+                        BotTelegram botTelegram = new BotTelegram(maquinaBD, maquinaBD.getLocalizacao().getUsuario().getChatId());
+                        botTelegram.enviarMensagem(temperaturaAlerta.mensagemAtencao(maquinaBD, registro));
+                        Log log = new Log(maquinaBD.getIdMaquina(), 1);
+                        String mensagem = String.format("Aviso urgênte de temperatura sobre a maquina '%d', enviada para o chat: %s", maquinaBD.getIdMaquina(), maquinaBD.getLocalizacao().getUsuario().getChatId());
+                        MensagemLog mensagemLog = new MensagemLog(maquinaBD.getIdMaquina(), mensagem, "PERIGO");
+                        log.escrever(mensagemLog);
+                        Aviso aviso = new Aviso(1, "ALERTA", "Temperatura do processador acima do normal", false, maquinaBD);
+                        QueryBD.inserirAviso(aviso);
+                        contadorAlertaTemperatura++;
+                    }
                 }
             }
             if (registro.getPorcRam() > 90 && registro.getPorcProcessador() > 90) {
@@ -250,26 +259,25 @@ public class TelaMonitoramento extends javax.swing.JFrame {
                     contadorAlertaProcessador++;
                 }
             }
-            System.out.println(temperaturaAlerta);
             lblUsoProcessador.setText(String.valueOf(registro.getPorcProcessador()));
+            if(registro.getTemperaturaCpu() != 0.0){
             pgbTempCPU.setValue(registro.getTemperaturaCpu().intValue());
             lblTempCPU.setText(String.valueOf(registro.getTemperaturaCpu().intValue()) + "ºC");
             pgbUsoCpu.setValue(registro.getPorcProcessador().intValue());
+            }else{
+                pgbTempCPU.setValue(0);
+                lblTempCPU.setText("Temperatura não suportada");
+            }
             lblUsoProcessador.setText(String.format("%.2f %%", registro.getPorcProcessador()));
-            
-            
             lblUsoRAM.setText(String.format("%.2f %%", registro.getPorcRam()));
             pgbUsoRAM.setValue(registro.getPorcRam().intValue());
-            
+
             pgbUsoMemoria.setValue(registro.getPorcMemoria().intValue());
             lblUsoMemoria.setText(String.format("%.2f %%", registro.getPorcMemoria()));
-            
-            
+
             pgbUsoDisco.setValue(registro.getPorcDisco().intValue());
             lblUsoDisco.setText(String.format("%.2f %%", registro.getPorcDisco()));
-            
-            
-            
+
             Administrativo adm = QueryBD.mediaAdministrativo(maquinaBD);
             lblLucro.setText(String.format("R$%.2f", adm.calcularLucro()));
             lblGasto.setText(String.format("R$%.2f", adm.getGasto()));
@@ -277,9 +285,7 @@ public class TelaMonitoramento extends javax.swing.JFrame {
             lblMediaMes.setText(String.format("%.1f clientes/mês", adm.getMediaClientes()));
             try {
                 Thread.sleep(tempo);
-            } 
-            catch (InterruptedException e) 
-            {
+            } catch (InterruptedException e) {
                 Log log = new Log(maquinaBD.getIdMaquina(), 1);
                 String mensagem = String.format("Interrupção inesperada na atualização dos dados");
                 MensagemLog mensagemLog = new MensagemLog(maquinaBD.getIdMaquina(), mensagem, "CRITICA");
@@ -402,15 +408,13 @@ public class TelaMonitoramento extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setPreferredSize(new java.awt.Dimension(760, 590));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo_editado.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 610, 180, 80));
 
         lblUsuario.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lblUsuario.setForeground(new java.awt.Color(111, 44, 145));
         lblUsuario.setText("Usuario");
-        jPanel1.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, 20));
 
         btnSair.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnSair.setForeground(new java.awt.Color(111, 44, 145));
@@ -426,61 +430,50 @@ public class TelaMonitoramento extends javax.swing.JFrame {
                 btnSairActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, 20));
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/linha_lilas.png"))); // NOI18N
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 545, 102));
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/linha_Lilas.png"))); // NOI18N
 
         lblData1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         lblData1.setForeground(new java.awt.Color(111, 44, 145));
         lblData1.setText("DD/MM/AAAA");
-        jPanel1.add(lblData1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, -1));
 
         lblHora1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         lblHora1.setForeground(new java.awt.Color(111, 44, 145));
         lblHora1.setText("HH:MM");
-        jPanel1.add(lblHora1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, -1, -1));
 
         jLabel18.setBackground(new java.awt.Color(111, 44, 145));
         jLabel18.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(111, 44, 145));
         jLabel18.setText("Linha:");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
 
         lblLinha.setBackground(new java.awt.Color(111, 44, 145));
         lblLinha.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lblLinha.setForeground(new java.awt.Color(111, 44, 145));
         lblLinha.setText("Linha");
-        jPanel1.add(lblLinha, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, -1, -1));
 
         jLabel19.setBackground(new java.awt.Color(111, 44, 145));
         jLabel19.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(111, 44, 145));
         jLabel19.setText("Estação:");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, -1, -1));
 
         lblEstacao.setBackground(new java.awt.Color(111, 44, 145));
         lblEstacao.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lblEstacao.setForeground(new java.awt.Color(111, 44, 145));
         lblEstacao.setText("Estação");
-        jPanel1.add(lblEstacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, -1, -1));
 
         jLabel31.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(111, 44, 145));
         jLabel31.setText("segundos");
-        jPanel1.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, -1, 30));
 
         spnAtualizacao.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
         spnAtualizacao.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         spnAtualizacao.setAutoscrolls(true);
         spnAtualizacao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(111, 44, 145)));
         spnAtualizacao.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.add(spnAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 50, 30));
 
         jLabel32.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(111, 44, 145));
         jLabel32.setText("Tempo de atualização:");
-        jPanel1.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, 30));
 
         btnMonitorar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botao_monitorar.png"))); // NOI18N
         btnMonitorar.setBorderPainted(false);
@@ -492,7 +485,6 @@ public class TelaMonitoramento extends javax.swing.JFrame {
                 btnMonitorarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnMonitorar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 82, 40));
 
         btnParar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botao_parar.png"))); // NOI18N
         btnParar.setBorderPainted(false);
@@ -504,7 +496,6 @@ public class TelaMonitoramento extends javax.swing.JFrame {
                 btnPararActionPerformed(evt);
             }
         });
-        jPanel1.add(btnParar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 75, 40));
 
         btnProcessos.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
         btnProcessos.setForeground(new java.awt.Color(111, 44, 145));
@@ -519,27 +510,22 @@ public class TelaMonitoramento extends javax.swing.JFrame {
                 btnProcessosActionPerformed(evt);
             }
         });
-        jPanel1.add(btnProcessos, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 570, 190, 90));
 
         lblAvisoCapturar.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         lblAvisoCapturar.setForeground(new java.awt.Color(111, 44, 145));
         lblAvisoCapturar.setText("Capturando informações");
-        jPanel1.add(lblAvisoCapturar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, 160, 30));
 
         lblReticencias1.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         lblReticencias1.setForeground(new java.awt.Color(111, 44, 145));
         lblReticencias1.setText(".");
-        jPanel1.add(lblReticencias1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 200, -1, -1));
 
         lblReticencias3.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         lblReticencias3.setForeground(new java.awt.Color(111, 44, 145));
         lblReticencias3.setText(".");
-        jPanel1.add(lblReticencias3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 200, 10, -1));
 
         lblReticencias2.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         lblReticencias2.setForeground(new java.awt.Color(111, 44, 145));
         lblReticencias2.setText(".");
-        jPanel1.add(lblReticencias2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(106, 52, 148), 3));
@@ -677,8 +663,6 @@ public class TelaMonitoramento extends javax.swing.JFrame {
         lblCPU.setText("CPU");
         jPanel2.add(lblCPU, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, 10));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 310, 260));
-
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(106, 52, 148), 3));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -810,8 +794,6 @@ public class TelaMonitoramento extends javax.swing.JFrame {
         jLabel26.setText("Uso da CPU");
         jPanel5.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 70, 40));
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 250, 410, 260));
-
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(106, 52, 148), 3));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -918,17 +900,144 @@ public class TelaMonitoramento extends javax.swing.JFrame {
 
         jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 290, 160));
 
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, 310, 160));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(lblUsuario)
+                .addGap(18, 18, 18)
+                .addComponent(btnSair)
+                .addGap(127, 127, 127)
+                .addComponent(lblData1)
+                .addGap(32, 32, 32)
+                .addComponent(lblHora1))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel18)
+                        .addGap(16, 16, 16)
+                        .addComponent(lblLinha))
+                    .addComponent(jLabel32))
+                .addGap(9, 9, 9)
+                .addComponent(spnAtualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(jLabel31)
+                .addGap(14, 14, 14)
+                .addComponent(btnMonitorar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel19)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(btnParar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(lblEstacao)))
+                .addGap(25, 25, 25)
+                .addComponent(lblAvisoCapturar, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(lblReticencias1)
+                .addGap(7, 7, 7)
+                .addComponent(lblReticencias2)
+                .addGap(7, 7, 7)
+                .addComponent(lblReticencias3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(btnProcessos, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblHora1)
+                        .addComponent(lblData1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(10, 10, 10)
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel18)
+                            .addComponent(lblLinha))
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(spnAtualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(btnMonitorar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel19)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(btnParar))
+                            .addComponent(lblEstacao)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(lblAvisoCapturar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(lblReticencias1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(lblReticencias2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(lblReticencias3)))
+                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(btnProcessos, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -950,12 +1059,9 @@ public class TelaMonitoramento extends javax.swing.JFrame {
     private void btnMonitorarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMonitorarActionPerformed
         Integer valor = Integer.valueOf(spnAtualizacao.getValue().toString());
         if (!monitorando) {
-            if (valor < 6) 
-            {
+            if (valor < 6) {
                 spnAtualizacao.setValue(6);
-            } 
-            else 
-            {
+            } else {
                 Thread threadMonitoramento = new Thread(this::atualizarDados);
                 Thread threadReticencias = new Thread(this::reticencias);
                 monitorando = true;
