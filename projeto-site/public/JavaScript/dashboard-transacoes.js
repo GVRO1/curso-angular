@@ -3,7 +3,18 @@ onload = function () {
     quantidadeMaquinas();
     document.body.style.visibility = "visible";
     local.innerHTML = sessionStorage.localizacao_usuario;
-    
+}
+
+var dataInput = dataMonitoracao.value = dataAtualFormatada(); 
+
+function dataAtualFormatada(){
+    var data = new Date(),
+        dia  = data.getDate().toString(),
+        diaF = (dia.length == 1) ? '0'+dia : dia,
+        mes  = (data.getMonth()+1).toString(), //+1 pois no getMonth Janeiro começa com zero.
+        mesF = (mes.length == 1) ? '0'+mes : mes,
+        anoF = data.getFullYear();
+    return anoF+"-"+mesF+"-"+diaF;
 }
 
 var exibiu_grafico = false;
@@ -82,7 +93,7 @@ function obterDadosGrafico() {
     var valoresFormatado = [];
     var horas = [];
     var valores = [];
-    fetch('/vendas/usuarios-hora/1', { cache: 'no-store' }).then(function (response) {
+    fetch(`/vendas/usuarios-hora/${dataInput}`, { cache: 'no-store' }).then(function (response) {
         if (response.ok) {
             response.json().then(function (resposta) {
 
@@ -203,9 +214,13 @@ function gerarTabela(maquina) {
                 resposta.reverse();
             });
         } else {
-            alert('erro ao pegar os dadosda tabela ');
+            alert('Erro ao pegar os dados da tabela ');
         }
     })
+}
+
+function mudarDta(){
+    atualizarGrafico();
 }
 
 function mostra(){
