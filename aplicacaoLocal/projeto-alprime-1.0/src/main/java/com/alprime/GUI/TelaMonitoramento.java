@@ -56,10 +56,8 @@ public class TelaMonitoramento extends javax.swing.JFrame {
         initComponents();
         maquinaBD = QueryBD.procurarIdMaquina(idMaquina);
         String enderecoImagem = String.format("/linha_%s.png", maquinaBD.getLocalizacao().getTipoLinha());
-        System.out.println(enderecoImagem);
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource(enderecoImagem))); // NOI18N  
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/logo_alprime_reduzido.png")));
-        System.out.println(QueryBD.procurarIdMaquina(idMaquina));
         localizacao = maquinaBD.getLocalizacao();
         maquinaAtualizada = new Maquina(localizacao);
         QueryBD.atualizarMaquina(idMaquina, maquinaAtualizada);
