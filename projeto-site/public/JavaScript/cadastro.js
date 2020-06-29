@@ -63,11 +63,11 @@ function cadastrar()
       body: formulario_localizacao,
     }).then(function (response) {
       if (response.ok) {
-        alert("Localizacao cadastrado com sucesso");
+        alert("Localização cadastrada com sucesso");
       } else {
         alert("Erro de cadastro!");
         response.text().then(function (resposta) { });
-        console.log("Erro ao cadastrar Localizacao");
+        console.log("Erro ao cadastrar Localização");
       }
     });
     // Cadastrando usuario
@@ -76,12 +76,12 @@ function cadastrar()
       body: form_usuario,
     }).then(function (response) {
       if (response.ok) {
-        alert("Usuario cadastrado com sucesso");
+        alert("Usuário cadastrado com sucesso");
         window.location.assign("./login.html");
       } else {
         alert("Erro de cadastro!");
         response.text().then(function (resposta) { });
-        console.log("Erro ao cadastrar usuario");
+        console.log("Erro ao cadastrar usuário");
       }
     });
   } else{
@@ -91,7 +91,7 @@ function cadastrar()
 function verificarNome() {
   NomeOK = false;
   if (nome.value.length >= 6) {
-    console.log("Nome esta certo");
+    console.log("O nome está certo");
     NomeOK = true;
     AlertaNome.style.color = "white";
   } else {
@@ -108,7 +108,7 @@ function verificarSenha() {
     AlertaSenha.style.color = "red";
     SenhaOK = false;
   } else if (senha.value.length >= 8) {
-    console.log("Senha Aceitavel");
+    console.log("Senha Aceitável");
     SenhaOK = true;
     AlertaSenha.style.color = "white";
   } else {
@@ -121,16 +121,16 @@ function verificarSenha() {
 function verificarSenhaRep() {
   ConfSenhaOK = false;
   if (senha_repetida.value == senha.value) {
-    console.log("Confirmaçao da senha correta");
+    console.log("Confirmação da senha correta");
     AlertaConfSenha.style.color = "white";
     ConfSenhaOK = true;
   } else if (senha_repetida.value.length == 0) {
     ConfSenhaOK = false;
-    AlertaConfSenha.innerHTML = "deve reescrever a senha digitada";
+    AlertaConfSenha.innerHTML = "Deve reescrever a senha digitada";
     AlertaConfSenha.style.color = "red";
   } else {
     ConfSenhaOK = false;
-    AlertaConfSenha.innerHTML = "Deve ser igual a senha acima";
+    AlertaConfSenha.innerHTML = "Deve ser igual a senha ao lado";
     AlertaConfSenha.style.color = "red";
   }
 }
@@ -190,11 +190,11 @@ function VerificarCPF() {
 function VerificarTelefone() {
   if (telefone.value.length == 8 || telefone.value.length == 9) {
     TelefoneOK = false;;
-    AlertaTelefone.innerHTML = "Informe o DD";
+    AlertaTelefone.innerHTML = "Informe o DDD";
     AlertaTelefone.style.color = "red";
   } else if (telefone.value.length > 11 || telefone.value.length < 8) {
     TelefoneOK = false;;
-    AlertaTelefone.innerHTML = "número de telefone inválido";
+    AlertaTelefone.innerHTML = "Número de telefone inválido";
     AlertaTelefone.style.color = "red";
   } else {
     TelefoneOK = true;;
@@ -225,13 +225,13 @@ function VerificarEndereco(){
   {
     enderecoOK = false;
     AlertaEndereco.style.color = "red";
-    AlertaEndereco.innerHTML = "informe seu endereço"
+    AlertaEndereco.innerHTML = "Informe seu endereço"
   } 
   else
   {
     enderecoOK = true;
     AlertaEndereco.style.color = "white";
-    console.log("endereço válido");
+    console.log("Endereço válido");
   }
 }
 
@@ -241,7 +241,7 @@ function VerificarLinha()
   {
     linhaOK = false;
     AlertaLinha.style.color = "red";
-    AlertaLinha.innerHTML = "informe sua linha"
+    AlertaLinha.innerHTML = "Informe sua linha"
   } 
   else
   {

@@ -41,7 +41,10 @@
 }
 .continuar{
     outline: none;
-    background-color: blueviolet;
+    cursor: pointer;
+    background-color: #6f2c91;
+    color: white;
+    border: #6f2c91;
     border-radius: 10px;
     margin-left: 45%;
     font-weight: bold;

@@ -39,6 +39,7 @@ canvas {
 }
 
 .voltar{
+    outline: none;
     min-width: min-content;
     background-color: #6f2c91;
     border: #6f2c91;

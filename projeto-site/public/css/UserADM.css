@@ -8,7 +8,7 @@ select{
 }
 .opcoes{
     margin-bottom: 80px;
-    margin-left: 10%;
+    margin-left: 9%;
     margin-top: 30px;
     justify-content: space-evenly !important;
     text-align: center;
@@ -16,6 +16,7 @@ select{
 }
 
 .botao4{
+outline: none;
 cursor: pointer;
 font-weight: bold;
 font-size: 16px;
@@ -24,6 +25,7 @@ margin-top: 20px;
 border-radius: 10px;
 color: #6f2c91;
 background-color: #6f2c918f;
+margin-left: 75%;
 }
 
 .botao4:hover{
@@ -34,6 +36,7 @@ transition: 0.5s;
     background-color: #4DB033;
 }
 .opcoes button{
+    outline: none;
     cursor: pointer;
     background-color: #6f2c918f;
     font-family: Arial, Helvetica, sans-serif;

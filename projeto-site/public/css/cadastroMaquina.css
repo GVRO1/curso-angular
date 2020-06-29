@@ -51,7 +51,6 @@ h6{
 }
 .botoes button
 {
-    background-color: blueviolet;
     border-radius: 10px;
     font-weight: bold;
     font-size: large;
@@ -61,6 +60,12 @@ h6{
     margin-left: 10%;
     margin-right: 10%;
     transition: 0.5s;
+    outline: none;
+    cursor: pointer;
+    background-color: #6f2c91;
+    color: white;
+    border: #6f2c91;
+    width: 13%;
 }
 .botoes button:hover{
     color: white;
