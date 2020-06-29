@@ -4,11 +4,9 @@ table {
     font: 75%/2 "Myriad Pro", Frutiger, "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", Verdana, sans-serif;
     /* margin-top: 120px; */
     border-collapse: collapse;
-    width: 50em;
     margin-left: 10%;
     width: 80%;
     border: 2px solid rgb(44, 44, 44)  !important;
-    min-height: 500px;
 }
 caption{
     font-size: 25px;
@@ -77,12 +75,20 @@ h1{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-select{
+.box{
+    text-align: -webkit-center;
+}
+
+.box label{
+    color: #4DB033;
+    font-weight: bold;
+}
+
+.box select{
     text-align-last: center;
     height: 23px;
     margin-top: 0px;
     width: 30%;
-    margin-left: 35%;
     border-radius: 7px;
     border: inset 2px; 
     border-color: #4DB033;

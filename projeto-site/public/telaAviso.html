@@ -25,11 +25,15 @@
 
             <H1 id="local"></H1>
 
-            <select onchange="Avisos()" id="boxMaquina">
-                <option value="0">Escolha a máquina</option>
-            </select>
+            <div class="box">
+                <label for="">Id da Máquina:</label>
+                <select onchange="Avisos()" id="boxMaquina">
+                    <option value="0">Escolha a máquina</option>
+                </select>
+            </div>
+            
 
-            <table>
+            <table id="table">
                     <caption>Fila de Avisos</caption>
                     <thead>
                         <tr>

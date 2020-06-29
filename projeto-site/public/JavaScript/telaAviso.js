@@ -50,6 +50,17 @@ function Avisos() {
 				}
 
 				resposta.reverse();
+
+				if (tbody.innerHTML == "" && boxMaquina.value != 0){
+					tbody.innerHTML +=
+						`<tr>
+							<td>//</td>
+							<td>Morto</td>
+							<td>Toten Ainda é inexistente</td>
+							<td>//</td>
+							<td><button>Enviar técnico</button></td>
+						</tr>`
+				}
 			});
 		} else {
 			alert('erro ao pegar os Avisos ');
