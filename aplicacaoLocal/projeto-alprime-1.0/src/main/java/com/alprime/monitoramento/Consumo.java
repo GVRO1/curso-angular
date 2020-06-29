@@ -68,8 +68,6 @@ public class Consumo {
     }
 
     public static Double pegarTemperaturaJsensor() {
-        System.out.println(JSensors.get.components().cpus.isEmpty());
-        System.out.println(JSensors.get.components().cpus.get(0).sensors.temperatures != null);
         if (!JSensors.get.components().cpus.isEmpty() && JSensors.get.components().cpus.get(0).sensors.temperatures != null) {
             Cpu cpu = JSensors.get.components().cpus.get(0);
                 List<Temperature> temperaturas = cpu.sensors.temperatures;
