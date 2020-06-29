@@ -68,11 +68,13 @@ public class Consumo {
     }
 
     public static Double pegarTemperaturaJsensor() {
-        if (!JSensors.get.components().cpus.isEmpty() && JSensors.get.components().cpus.get(0).sensors.temperatures != null) {
-            Cpu cpu = JSensors.get.components().cpus.get(0);
+        if (!JSensors.get.components().cpus.isEmpty()) {
+            if (JSensors.get.components().cpus.get(0).sensors.temperatures != null) {
+                Cpu cpu = JSensors.get.components().cpus.get(0);
                 List<Temperature> temperaturas = cpu.sensors.temperatures;
                 System.out.println(cpu.sensors.temperatures.get(temperaturas.size() - 1).name);
                 return cpu.sensors.temperatures.get(temperaturas.size() - 1).value;
+            }
         }
         return 0.0;
     }
@@ -130,24 +132,13 @@ public class Consumo {
     }
 
     public static Double monitorarConsumoDisco() {
-//        SystemInfo sy = new SystemInfo();
-//        OperatingSystem os = sy.getOperatingSystem();
-//        FileSystem fileSystem = os.getFileSystem();
-//        List<OSFileStore> osfs = fileSystem.getFileStores();
-//
-//        Double porcentagem = 0.0;
-//        
-//        Double usado = (double)osfs.get(0).getTotalSpace() 
-//                       - (double)osfs.get(0).getFreeSpace();
-//
-//        Double total = (double)osfs.get(0).getTotalSpace();
-//
-//        porcentagem = (double)((usado / total)*100);
-//        
-//        return porcentagem;
+        if(INFO_SO.getFamily().equals("Windows")){
         List<Disk> disco = JSensors.get.components().disks;
         int tamanhoDisco = disco.get(0).sensors.loads.size();
         return cpus.get(0).sensors.loads.get(tamanhoDisco - 1).value;
+        }else{
+            return 0.0;
+        }
     }
 
     @Override

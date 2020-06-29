@@ -40,8 +40,12 @@ import oshi.util.Util;
  * @author brain
  */
 public class teste {
-
+     
     public static void main(String[] args) {
-        System.out.println(Consumo.pegarTemperaturaJsensor());
+        SystemInfo infoSistema = new SystemInfo();
+    HardwareAbstractionLayer infoHardware = infoSistema.getHardware();
+     OperatingSystem infoSO = infoSistema.getOperatingSystem();
+        System.out.println(infoSistema.getOperatingSystem().getFamily());
+        
     }
 }

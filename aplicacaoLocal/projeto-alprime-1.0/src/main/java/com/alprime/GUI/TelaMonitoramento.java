@@ -275,10 +275,16 @@ public class TelaMonitoramento extends javax.swing.JFrame {
 
             pgbUsoMemoria.setValue(registro.getPorcMemoria().intValue());
             lblUsoMemoria.setText(String.format("%.2f %%", registro.getPorcMemoria()));
-
+            if(registro.getPorcDisco().intValue() == 0.0){
+                pgbUsoDisco.setValue(0);
+                pgbUsoDisco.setForeground(new java.awt.Color(255, 0, 51));
+                pgbUsoDisco.setToolTipText("");
+                pgbUsoDisco.setString("Não suportada");
+                pgbUsoDisco.setStringPainted(true);
+            }else{
             pgbUsoDisco.setValue(registro.getPorcDisco().intValue());
-            lblUsoDisco.setText(String.format("%.2f %%", registro.getPorcDisco()));
-
+            lblUsoDisco.setText(String.format("%.2f %%", registro.getPorcDisco()));    
+            }
             Administrativo adm = QueryBD.mediaAdministrativo(maquinaBD);
             lblLucro.setText(String.format("R$%.2f", adm.calcularLucro()));
             lblGasto.setText(String.format("R$%.2f", adm.getGasto()));
