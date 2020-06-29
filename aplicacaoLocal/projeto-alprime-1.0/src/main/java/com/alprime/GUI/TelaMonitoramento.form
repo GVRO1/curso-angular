@@ -26,12 +26,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" max="32767" attributes="0"/>
+          <Component id="jPanel1" alignment="0" pref="786" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" min="-2" pref="704" max="-2" attributes="0"/>
+          <Component id="jPanel1" alignment="1" min="-2" pref="704" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -50,70 +50,79 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                  <Component id="lblUsuario" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnSair" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
-                  <Component id="lblData1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="lblHora1" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" attributes="0">
-                  <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
-                  <Component id="jLabel17" min="-2" pref="570" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" attributes="0">
-                  <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
-                          <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
-                          <Component id="lblLinha" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
-                  <Component id="spnAtualizacao" min="-2" pref="50" max="-2" attributes="0"/>
-                  <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                  <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="14" pref="14" max="-2" attributes="0"/>
-                  <Component id="btnMonitorar" min="-2" pref="82" max="-2" attributes="0"/>
-                  <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" attributes="0">
+                          <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
+                                  <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
+                                  <Component id="lblLinha" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
+                          <Component id="spnAtualizacao" min="-2" pref="50" max="-2" attributes="0"/>
                           <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                          <Component id="btnParar" min="-2" pref="75" max="-2" attributes="0"/>
+                          <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="14" pref="14" max="-2" attributes="0"/>
+                          <Component id="btnMonitorar" min="-2" pref="82" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                                  <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="lblEstacao" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="btnParar" min="-2" pref="75" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="lblAvisoCapturar" min="-2" pref="160" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="lblReticencias1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                                  <Component id="lblReticencias2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                                  <Component id="lblReticencias3" min="-2" pref="10" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                       <Group type="102" attributes="0">
-                          <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
-                          <Component id="lblEstacao" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
+                          <Component id="jPanel2" min="-2" pref="310" max="-2" attributes="0"/>
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
+                          <Component id="jPanel7" min="-2" pref="310" max="-2" attributes="0"/>
+                          <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
+                          <Component id="btnProcessos" min="-2" pref="190" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="180" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                          <Component id="lblUsuario" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                  <Component id="jLabel17" min="-2" pref="570" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="btnSair" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
+                                  <Component id="lblData1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                  <Component id="lblHora1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
-                  <Component id="lblAvisoCapturar" min="-2" pref="160" max="-2" attributes="0"/>
-                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                  <Component id="lblReticencias1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
-                  <Component id="lblReticencias2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
-                  <Component id="lblReticencias3" min="-2" pref="10" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" attributes="0">
-                  <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                  <Component id="jPanel2" min="-2" pref="310" max="-2" attributes="0"/>
-                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                  <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" attributes="0">
-                  <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                  <Component id="jPanel7" min="-2" pref="310" max="-2" attributes="0"/>
-                  <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                  <Component id="btnProcessos" min="-2" pref="190" max="-2" attributes="0"/>
-                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="180" max="-2" attributes="0"/>
+                  <EmptySpace pref="18" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -134,76 +143,68 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="jLabel17" min="-2" pref="120" max="-2" attributes="0"/>
-                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblLinha" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lblLinha" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblEstacao" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                          <Component id="jLabel32" min="-2" pref="30" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="lblReticencias1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblReticencias2" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblReticencias3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblAvisoCapturar" min="-2" pref="30" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="spnAtualizacao" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="jLabel31" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="btnMonitorar" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnParar" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
-                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                          <Component id="jLabel32" min="-2" pref="30" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                          <Component id="spnAtualizacao" min="-2" pref="30" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                          <Component id="jLabel31" min="-2" pref="30" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                          <Component id="btnMonitorar" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
                           <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                  <Component id="btnParar" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="lblEstacao" min="-2" max="-2" attributes="0"/>
+                              <Component id="jPanel2" min="-2" pref="260" max="-2" attributes="0"/>
+                              <Component id="jPanel5" min="-2" pref="260" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jPanel7" min="-2" pref="160" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
+                                  <Component id="btnProcessos" min="-2" pref="90" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                          <Component id="lblAvisoCapturar" min="-2" pref="30" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                          <Component id="lblReticencias1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                          <Component id="lblReticencias2" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                          <Component id="lblReticencias3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel2" min="-2" pref="260" max="-2" attributes="0"/>
-                      <Component id="jPanel5" min="-2" pref="260" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel7" min="-2" pref="160" max="-2" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
-                          <Component id="btnProcessos" min="-2" pref="90" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="90" pref="90" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="450" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" pref="80" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="14" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -1257,8 +1258,10 @@
             <Component class="javax.swing.JProgressBar" name="pgbTempCPU">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="36" green="ba" red="52" type="rgb"/>
+                  <Color blue="33" green="0" red="ff" type="rgb"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
+                <Property name="string" type="java.lang.String" value="N&#xe3;o suportada"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
