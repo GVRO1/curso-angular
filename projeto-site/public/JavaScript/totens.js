@@ -50,7 +50,7 @@ function Completar(id_maquina) {
 <div class="dadosToten">
 <p>Id-Totem: <span id="idMaquina">${id_maquina}</span> </p>
 <p>Status-Totem: <span id="Status">${texto}</span></p>
-<p>Transações-Totem: <span id="Transacoes">0</span></p>
+<p>Transações-Totem: <span id="Transacoes">R$0</span></p>
 <p>Clientes-Atendidos-Totem: <span id="Clientes">0</span> </p>
 <p>Capacidade-Memoria: <span id="capacidadeMemoria">0</span> </p>
 <p>Ocorrências: <span id="Ocorrencia">0</span></p>
@@ -90,7 +90,7 @@ function DadosMAquina(id_maquina, capacidade_memoria, status) {
                     <div class="dadosToten">
                       <p>Id-Totem: <span id="idMaquina">${id_maquina}</span> </p>
                       <p>Status-Totem: <span id="Status">${texto}</span></p>
-                      <p>Transações-Totem: <span id="Transacoes">${registro.Transacoes}</span></p>
+                      <p>Transações-Totem: <span id="Transacoes">R$${registro.Transacoes}</span></p>
                       <p>Clientes-Atendidos-Totem: <span id="Clientes">${registro.Clientes}</span> </p>
                       <p>Capacidade-Memoria: <span id="capacidadeMemoria">${capacidade_memoria}</span> </p>
                       <p>Ocorrências: <span id="Ocorrencia">${registro.Ocorrências}</span></p>
