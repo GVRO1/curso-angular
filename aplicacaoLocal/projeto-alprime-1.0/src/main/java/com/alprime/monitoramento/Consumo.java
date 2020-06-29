@@ -1,6 +1,5 @@
 package com.alprime.monitoramento;
 
-
 import com.profesorfalken.jsensors.JSensors;
 import com.profesorfalken.jsensors.model.components.Components;
 import com.profesorfalken.jsensors.model.components.Cpu;
@@ -16,86 +15,71 @@ import oshi.software.os.OperatingSystem;
 import oshi.util.Util;
 import oshi.hardware.Sensors;
 import oshi.software.os.FileSystem;
+
 public class Consumo {
 
-   
     private int cpuSize;
     private Double cpuUso, consumoRAM, consumoMemoria, consumoDisco, tamanhoDisco, tempCPU;
     private static List<Cpu> cpus = JSensors.get.components().cpus;
-    
+
     private InformacoesComputador comp = new InformacoesComputador();
     private static final SystemInfo INFO_SISTEMA = new SystemInfo();
     private static final HardwareAbstractionLayer INFO_HARDWARE = INFO_SISTEMA.getHardware();
     private static final CentralProcessor PROCESSOR = INFO_HARDWARE.getProcessor();
     private static final OperatingSystem INFO_SO = INFO_SISTEMA.getOperatingSystem();
-     
 
-    
-    
-    public Consumo()
-    {
-        
+    public Consumo() {
+
         cpuUso = Consumo.pegarCpu();
         tempCPU = Consumo.pegarTemperaturaJsensor();
         consumoRAM = Consumo.monitorarRam();
         consumoMemoria = Consumo.monitorarMemoria();
         consumoDisco = Consumo.monitorarConsumoDisco();
         tamanhoDisco = Consumo.pegarTamanhoDisco();
-        
+
     }
 
-    
-    
-    public Double getConsumoRAM() 
-    {
+    public Double getConsumoRAM() {
         return consumoRAM;
     }
 
-    public Double getConsumoDisco() 
-    {
+    public Double getConsumoDisco() {
         return consumoDisco;
     }
 
-    public Double getUsoCpu() 
-    {
+    public Double getUsoCpu() {
         return cpuUso;
     }
 
-    public Double getConsumoMemoria() 
-    {
+    public Double getConsumoMemoria() {
         return consumoMemoria;
     }
-    
-    
-    public Double getTemperaturaCPU()
-    {
+
+    public Double getTemperaturaCPU() {
         return tempCPU;
     }
-    
-    public void setConsumoMemoria(Double consumoMemoria) 
-    {
+
+    public void setConsumoMemoria(Double consumoMemoria) {
         this.consumoMemoria = consumoMemoria;
     }
-    
-    public static Double pegarTemperaturaOshi(){
+
+    public static Double pegarTemperaturaOshi() {
         return INFO_HARDWARE.getSensors().getCpuTemperature();
     }
-                
-    
-    public static Double pegarTemperaturaJsensor() 
-    {
-        Cpu cpu = JSensors.get.components().cpus.get(0);
-        if (cpu.sensors.temperatures != null && cpu.sensors.temperatures.size() > 0){
-            List<Temperature> temperaturas = cpu.sensors.temperatures;
-            System.out.println(cpu.sensors.temperatures.get(temperaturas.size()-1).name);
-            return cpu.sensors.temperatures.get(temperaturas.size()-1).value;
+
+    public static Double pegarTemperaturaJsensor() {
+        System.out.println(JSensors.get.components().cpus.isEmpty());
+        System.out.println(JSensors.get.components().cpus.get(0).sensors.temperatures != null);
+        if (!JSensors.get.components().cpus.isEmpty() && JSensors.get.components().cpus.get(0).sensors.temperatures != null) {
+            Cpu cpu = JSensors.get.components().cpus.get(0);
+                List<Temperature> temperaturas = cpu.sensors.temperatures;
+                System.out.println(cpu.sensors.temperatures.get(temperaturas.size() - 1).name);
+                return cpu.sensors.temperatures.get(temperaturas.size() - 1).value;
         }
         return 0.0;
     }
-    
-    
-    public static Double pegarCpu() 
-    {
+
+    public static Double pegarCpu() {
         long[] prevTicks = PROCESSOR.getSystemCpuLoadTicks();
         long[][] prevProcTicks = PROCESSOR.getProcessorCpuLoadTicks();
         // Wait a second...
@@ -126,22 +110,19 @@ public class Consumo {
         }
         return (memoriaTotal - memoriaLivre) * 100 / memoriaTotal;
     }
-    
-    public static Double pegarTamanhoDisco()
-    {
+
+    public static Double pegarTamanhoDisco() {
         double totalMemoria = 0.0;
         List<OSFileStore> memoria = INFO_SO.getFileSystem().getFileStores();
-        for (OSFileStore reparticoes : memoria) 
-        {
+        for (OSFileStore reparticoes : memoria) {
             Double memoriaGB = Double.valueOf(reparticoes.getTotalSpace()) / 1000000000;
             totalMemoria += memoriaGB;
         }
-        
+
         return totalMemoria;
     }
-     
-    public static Double monitorarRam() 
-    {
+
+    public static Double monitorarRam() {
         Double ramTotal = Converssao.bytesParaBits(INFO_HARDWARE.getMemory().getTotal());
         Double ramDisponivel = Converssao.bytesParaBits(INFO_HARDWARE.getMemory().getAvailable());
         Double ramRestante = ramTotal - ramDisponivel;
@@ -149,9 +130,8 @@ public class Consumo {
 
         return ramRestante * 100 / ramTotal;
     }
-    
-    public static Double monitorarConsumoDisco()
-    {
+
+    public static Double monitorarConsumoDisco() {
 //        SystemInfo sy = new SystemInfo();
 //        OperatingSystem os = sy.getOperatingSystem();
 //        FileSystem fileSystem = os.getFileSystem();
@@ -167,7 +147,7 @@ public class Consumo {
 //        porcentagem = (double)((usado / total)*100);
 //        
 //        return porcentagem;
-         List<Disk> disco = JSensors.get.components().disks;
+        List<Disk> disco = JSensors.get.components().disks;
         int tamanhoDisco = disco.get(0).sensors.loads.size();
         return cpus.get(0).sensors.loads.get(tamanhoDisco - 1).value;
     }
@@ -177,6 +157,4 @@ public class Consumo {
         return "Consumo{" + "cpuSize=" + cpuSize + ", cpuUso=" + cpuUso + ", consumoRAM=" + consumoRAM + ", consumoMemoria=" + consumoMemoria + ", consumoDisco=" + consumoDisco + ", tamanhoDisco=" + tamanhoDisco + ", comp=" + comp + '}';
     }
 
-    
-   
 }
