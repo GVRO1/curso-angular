@@ -3,9 +3,10 @@ onload = function () {
     quantidadeMaquinas();
     document.body.style.visibility = "visible";
     local.innerHTML = sessionStorage.localizacao_usuario;
+    dataMonitoracao.value = dataInput;
 }
 
-var dataInput = dataMonitoracao.value = dataAtualFormatada(); 
+var dataInput = dataAtualFormatada(); 
 
 function dataAtualFormatada(){
     var data = new Date(),
@@ -220,6 +221,7 @@ function gerarTabela(maquina) {
 }
 
 function mudarDta(){
+    dataInput = document.getElementById('dataMonitoracao').value;
     atualizarGrafico();
 }
 

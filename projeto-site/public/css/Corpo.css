@@ -47,6 +47,7 @@ body{
     color: red ;
 }
 .options button{
+    outline: none;
     cursor: pointer;
     min-width: min-content;
     background-color: #6f2c91;

@@ -40,6 +40,7 @@ td {
 }
 
 table button{
+    outline: none;
     color: white;
     min-width: min-content;
     min-height: 40px;

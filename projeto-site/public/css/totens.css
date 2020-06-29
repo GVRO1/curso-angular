@@ -28,6 +28,7 @@
     font-weight: bold;
 }
 .voltar{
+    outline: none;
     min-width: min-content;
     background-color: blueviolet;
     border-radius: 20px;

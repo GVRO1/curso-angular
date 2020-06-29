@@ -21,6 +21,7 @@
     margin-left: 10%;
 }
 .btnBuscar{
+    outline: none;
     background-color: #6f2c91;
     cursor: pointer;
     border: #6f2c91;

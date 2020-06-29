@@ -14,6 +14,7 @@
     margin-left: 10%;
 }
 .logEsquerdo input{
+    outline: none;
     height: 20px;
     margin-bottom: 50px;
     width: 90%;
@@ -32,6 +33,7 @@
     margin-right: 5%;
 }
 .logDireito button{
+    outline: none;
     cursor: pointer;
     height: 30%;
     width: 50%;

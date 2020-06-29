@@ -3,6 +3,7 @@
     display: flex;
 }
 .cadastrar input{
+    outline: none;
     height: 20px;
     margin-top: 0px;
     width: 80%;
@@ -11,6 +12,7 @@
     text-shadow: blue;
 }
 .cadastrar select{
+    outline: none;
     height: 23px;
     margin-top: 0px;
     width: 41%;
