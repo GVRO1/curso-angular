@@ -1,20 +1,16 @@
 package com.alprime.monitoramento;
 
 import com.profesorfalken.jsensors.JSensors;
-import com.profesorfalken.jsensors.model.components.Components;
 import com.profesorfalken.jsensors.model.components.Cpu;
 import com.profesorfalken.jsensors.model.components.Disk;
 import com.profesorfalken.jsensors.model.sensors.Temperature;
 import java.util.List;
-import java.util.Map;
 import oshi.SystemInfo;
 import oshi.hardware.CentralProcessor;
 import oshi.hardware.HardwareAbstractionLayer;
 import oshi.software.os.OSFileStore;
 import oshi.software.os.OperatingSystem;
 import oshi.util.Util;
-import oshi.hardware.Sensors;
-import oshi.software.os.FileSystem;
 
 public class Consumo {
 
@@ -105,8 +101,6 @@ public class Consumo {
         for (OSFileStore reparticoes : memoria) {
             memoriaLivre += reparticoes.getFreeSpace();
             memoriaTotal += reparticoes.getTotalSpace();
-            System.out.println(memoriaLivre * 100 / memoriaTotal);
-
         }
         return (memoriaTotal - memoriaLivre) * 100 / memoriaTotal;
     }
@@ -126,8 +120,6 @@ public class Consumo {
         Double ramTotal = Converssao.bytesParaBits(INFO_HARDWARE.getMemory().getTotal());
         Double ramDisponivel = Converssao.bytesParaBits(INFO_HARDWARE.getMemory().getAvailable());
         Double ramRestante = ramTotal - ramDisponivel;
-        System.out.println("ramRestante:" + ramRestante);
-
         return ramRestante * 100 / ramTotal;
     }
 
