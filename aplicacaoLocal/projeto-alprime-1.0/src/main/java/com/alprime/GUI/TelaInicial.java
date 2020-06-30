@@ -150,12 +150,12 @@ public class TelaInicial extends javax.swing.JFrame {
         btnMonitoramento.setActionCommand("  Tela de Monitoramento");
         btnMonitoramento.setContentAreaFilled(false);
         btnMonitoramento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(btnMonitoramento, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, -1, -1));
+        jPanel1.add(btnMonitoramento, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(111, 44, 145));
         jLabel10.setText("Selecione a tela desejada");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, -1, -1));
 
         btnMostrarSenha.setBackground(new java.awt.Color(111, 44, 145));
         btnMostrarSenha.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
