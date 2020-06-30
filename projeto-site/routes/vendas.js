@@ -67,12 +67,12 @@ router.get('/qntmaquina/:localizacao', function(req, res, next) {
 	  });
 });
 
-router.get('/tabela/:maquina', function(req, res, next) {
+router.get('/tabela/:data', function(req, res, next) {
 	
 	// alterar  os nomes da tabela de acordo com o nome da tabela e do nome dos campo
 	var startDate = req.params.startDate ;
 	var endDate = req.params.endDate;
-	const instrucaoSql = `select valor, hour(data_hora) as data_hora from venda where fk_maquina = ${req.params.maquina};`;
+	const instrucaoSql = `select valor, hour(data_hora) as hora from venda where DATE_FORMAT (data_hora,'%Y-%m-%d') = '${req.params.data}';`;
 	
 
 	sequelize.query(instrucaoSql,selectQueryType, {
@@ -87,7 +87,38 @@ router.get('/tabela/:maquina', function(req, res, next) {
 	  });
 });
 
+router.get('/tabelaData/:data', function(req, res, next) {
 
+	const instrucaoSql = `select count(DISTINCT(id_maquina)) as totaMaquina, sum(valor) as totalValor, hour(data_hora) as hora from venda, maquina where fk_maquina = id_maquina group by hour(data_hora);`;
+	
+
+	sequelize.query(instrucaoSql,selectQueryType, {
+		model: Venda,Model: true 	
+	  })
+	  .then(resultado => {
+			console.log(`Encontrados: ${resultado}`);
+			res.json(resultado);
+	  }).catch(erro => {
+			console.error(erro);
+			res.status(500).send(erro.message);
+	  });
+});
+
+router.get('/maquinas2/:usuario/:data', function(req, res, next) {
+	
+	const instrucaoSql = `select count(DISTINCT(id_maquina)), capacidade_memoria, status from maquina, venda where fk_localizacao = ${req.params.usuario} and DATE_FORMAT (data_hora,'%Y-%m-%d') = '${req.params.data}';`;
+	sequelize.query(instrucaoSql, selectQueryType, {
+		model: Registro,
+		mapToModel: true 
+	  })
+	  .then(resultado => {
+			console.log(`Encontrados: ${resultado.length}`);
+			res.json(resultado);
+	  }).catch(erro => {
+			console.error(erro);
+			res.status(500).send(erro.message);
+	  });
+});
 
 
 module.exports = router;

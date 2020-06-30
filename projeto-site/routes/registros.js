@@ -162,4 +162,20 @@ router.get("/getMaquina/:usuario", function (req, res, next) {
 	  });
   });
 
+  router.get('/maquinas2/:usuario', function(req, res, next) {
+	
+	const instrucaoSql = `select count(DISTINCT(id_maquina)) as id_maquina from maquina where fk_localizacao = ${req.params.usuario}`;
+	sequelize.query(instrucaoSql, selectQueryType, {
+		model: Registro,
+		mapToModel: true 
+	  })
+	  .then(resultado => {
+			console.log(`Encontrados: ${resultado.length}`);
+			res.json(resultado);
+	  }).catch(erro => {
+			console.error(erro);
+			res.status(500).send(erro.message);
+	  });
+});
+
 module.exports = router;

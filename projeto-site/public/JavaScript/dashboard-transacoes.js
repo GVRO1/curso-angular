@@ -5,7 +5,7 @@ onload = function () {
     local.innerHTML = sessionStorage.localizacao_usuario;
     dataMonitoracao.value = dataInput;
 }
-
+var totalTrasa=0, Trasacoes=0,horaLuc = 0;
 var dataInput = dataAtualFormatada(); 
 
 function dataAtualFormatada(){
@@ -169,7 +169,8 @@ function plotarGrafico(dados) {
 
 function quantidadeMaquinas(){
     var  usuario = sessionStorage.fk_localizacao
-    fetch(`/registros/maquinas/${usuario}`, { cache: 'no-store' }).then(function (response) {
+    
+    fetch(`/registros/maquinas2/${usuario}`, { cache: 'no-store' }).then(function (response) {
         if (response.ok) {
             totalToten.innerHTML = 0;
             response.json().then(function (resposta) {
@@ -179,8 +180,9 @@ function quantidadeMaquinas(){
                 for (i = 0; i < resposta.length; i++) {
                     var registro = resposta[i];
 
-                    totalToten.innerHTML++;
-                    gerarTabela(registro.id_maquina);
+                  
+                        totalToten.innerHTML = registro.id_maquina;
+                        gerarTabela();
                 }
                 
                 resposta.reverse();
@@ -191,10 +193,14 @@ function quantidadeMaquinas(){
     })
 }
 
-function gerarTabela(maquina) {
-    var totalTrasa=0, Trasacoes=0,horaLuc = 0;
-    console.log(`esse é o valor de res: ${maquina}`);
-    fetch(`/vendas/tabela/${maquina}`, { cache: 'no-store' }).then(function (response) {
+function gerarTabela() {
+    var data = dataMonitoracao.value;
+    var maiorHora = 0;
+    totalTrasa = 0;Trasacoes = 0;horaLuc = 0;
+    totalTransaçoe.innerHTML = 0;
+    TotalPorHora.innerHTML = 0;
+    HoraLucrativa.innerHTML = 0;
+    fetch(`/vendas/tabela/${data}`, { cache: 'no-store' }).then(function (response) {
         if (response.ok) {
             response.json().then(function (resposta) {
 
@@ -202,9 +208,11 @@ function gerarTabela(maquina) {
 
                 for (i = 0; i < resposta.length; i++) {
                     var registro = resposta[i];
+                    
 
-                    if (registro.valor > horaLuc){
-                        HoraLucrativa.innerHTML = registro.data_hora
+                    if (registro.valor > maiorHora){
+                        maiorHora = registro.value;
+                        HoraLucrativa.innerHTML = registro.hora
                     }
                     Trasacoes += registro.valor;
 
@@ -223,8 +231,5 @@ function gerarTabela(maquina) {
 function mudarDta(){
     dataInput = document.getElementById('dataMonitoracao').value;
     atualizarGrafico();
-}
-
-function mostra(){
-
+    quantidadeMaquinas();
 }
