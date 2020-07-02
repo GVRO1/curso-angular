@@ -42,10 +42,7 @@ import oshi.util.Util;
 public class teste {
      
     public static void main(String[] args) {
-        SystemInfo infoSistema = new SystemInfo();
-    HardwareAbstractionLayer infoHardware = infoSistema.getHardware();
-     OperatingSystem infoSO = infoSistema.getOperatingSystem();
-        System.out.println(infoSistema.getOperatingSystem().getFamily());
+        System.out.println(Consumo.monitorarRam());
         
     }
 }
