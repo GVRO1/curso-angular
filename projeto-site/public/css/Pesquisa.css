@@ -3,21 +3,27 @@ h3{
 }
 select{
     width: 20%;
+    margin-bottom: 50px;
 }
 .selecao{
     text-align: -webkit-center;
     border-bottom: double blueviolet;
 }
 .selecao button{
-    background-color: blueviolet;
-    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    background-color: #6f2c91;
+    border: 1px solid #6f2c91;
+    color: white;
+    border-radius: 10px;
     margin: auto;
-    width: 13%;
+    width: 10%;
+    height: 28px;
     font-weight: bold;
     transition: 0.5s;
 }
 .selecao button:hover{
-    color: white;
+    color: #11011a;
     transition: 0.5s;
 }
 .espaco{
@@ -28,7 +34,7 @@ select{
     color: #6f2c91;
     font-style: italic;
     margin-top: 140px;
-    font-size: 3.5em;
+    font-size: 1.5em;
 }
 .status{
     display: none;
