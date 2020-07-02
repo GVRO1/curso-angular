@@ -31,15 +31,26 @@ public class Converssao {
         } else if (tamanho[0].equals("K")) {
             multiplicador = 1000;
         }
+        System.out.println(somenteNumero[0]);
         if (semVirgula.length == 1) {
             formatado = String.format("%s.0", semVirgula[0]);
         } else {
-            if (semVirgula[0].indexOf(".") >= 0) {
-                formatado = String.format("%s.%s", semVirgula[0], semVirgula[2]);
-            } else if (semVirgula[1].equals(",")) {
-                formatado = String.format("%s%s", semVirgula[0], semVirgula[2]);
-            }else {
-                formatado = String.format("%s%s", semVirgula[0], semVirgula[1]);
+            if (Double.valueOf(somenteNumero[0].replace(',', '.')) < 9.9) {
+                if (semVirgula[0].indexOf(".") >= 0) {
+                    formatado = String.format("%s.%s", semVirgula[0], semVirgula[2]);
+                } else if (semVirgula[1].equals(",")) {
+                    formatado = String.format("%s.%s", semVirgula[0], semVirgula[2]);
+                } else {
+                    formatado = String.format("%s%s", semVirgula[0], semVirgula[1]);
+                }
+            }else{
+                if (semVirgula[0].indexOf(".") >= 0) {
+                    formatado = String.format("%s%s.%s", semVirgula[0],semVirgula[1], semVirgula[3]);
+                } else if (semVirgula[1].equals(",")) {
+                     formatado = String.format("%s%s.%s", semVirgula[0],semVirgula[1], semVirgula[3]);
+                } else {
+                    formatado = String.format("%s%s.%s", semVirgula[0],semVirgula[1], semVirgula[3]);
+                }
             }
         }
         return Double.valueOf(formatado) * multiplicador;
