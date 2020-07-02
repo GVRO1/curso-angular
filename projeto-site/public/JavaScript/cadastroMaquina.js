@@ -25,6 +25,7 @@ function enviarMaquina() {
         resposta.json().then((json) => {
           console.log(json)
           console.log("Cadastro realizado!")
+          alert("Cadastrado com sucesso");
         });
       } else {
         console.log("Erro de cadastro!");
